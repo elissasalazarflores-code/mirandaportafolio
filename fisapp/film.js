@@ -30,11 +30,11 @@ const CROPS = {
 const HITS = [
   [0, 'hook', 'impact'],
   [0.0, 'Todavía', 'pop', { pitch: 'E5' }],
-  [1.5, 'haces tu', 'pop', { pitch: 'A5' }],
-  [2.4, 'contabilidad', 'pop', { pitch: 'C6' }],
-  [3.75, 'A MANO', 'thud'],
-  [5, 'tachón', 'type', { len: 0.35 }],
-  [6, 'punto', 'blip', { pitch: 'A6' }],
+  [0.9, 'haces tu', 'pop', { pitch: 'A5' }],
+  [1.65, 'contabilidad', 'pop', { pitch: 'C6' }],
+  [2.95, 'A MANO', 'thud'],
+  [4.2, 'tachón', 'type', { len: 0.35 }],
+  [5.25, 'punto', 'blip', { pitch: 'A6' }],
   [8, 'drop: FisApp', 'swell', { len: 1.2 }],
   [8, 'drop', 'impact'],
   [9.25, 'a cabecera', 'whoosh', { len: 0.4 }],
@@ -51,10 +51,10 @@ const HITS = [
   [22, 'clic bell', 'bell', { pitch: 'E6' }],
   [23.5, 'onda', 'riser', { len: 0.25 }],
   [24, 'nómina', 'impact'],
-  [27.1, 'calculada', 'blip', { pitch: 'A5' }],
-  [28.6, 'timbrada', 'blip', { pitch: 'C6' }],
-  [30, 'contabilizada', 'blip', { pitch: 'E6' }],
-  [30.75, 'recibo', 'thud'],
+  [27.3, 'calculada', 'blip', { pitch: 'A5' }],
+  [29.1, 'timbrada', 'blip', { pitch: 'C6' }],
+  [30.3, 'contabilizada', 'blip', { pitch: 'E6' }],
+  [31.0, 'recibo', 'thud'],
   [31.75, 'neto', 'coins'],
   [33, 'whip', 'whoosh', { len: 0.4, from: 600, to: 2400 }],
   [34.75, 'tarjeta privado', 'thud'],
@@ -62,7 +62,7 @@ const HITS = [
   [37.6, 'control', 'tick'],
   [39.5, 'punto cae', 'thud'],
   [39.75, 'wordmark', 'bell', { pitch: 'A6' }],
-  [41, 'tagline', 'tick'],
+  [41.6, 'tagline', 'tick'],
   [45.75, 'CTA', 'pop', { pitch: 'A5' }],
   [48, 'cierre', 'impact'],
 ];
@@ -138,21 +138,21 @@ function sceneHook(ctx, u) {
   softGlow(ctx, W * 0.85, H * 0.2, 700, C.purple, 0.35);
 
   ctx.save();
-  shake(ctx, u, 3.75, 22, 5, 0.18);
+  shake(ctx, u, 2.95, 22, 5, 0.18);
   const x = S.x + 6;
   const ex = E.inBack(prog(u, 7.0, 7.7), 1.6); // words drop away as the dot takes over
   ctx.translate(0, ex * 300);
   ctx.globalAlpha = 1 - prog(u, 7.3, 7.7);
   popWord(ctx, '¿Todavía', x, 760, 168, C.white, u, -0.3);
-  popWord(ctx, 'haces tu', x, 940, 168, C.white, u, 1.35);
+  popWord(ctx, 'haces tu', x, 940, 168, C.white, u, 0.8);
   const cs = fitSize(ctx, 'contabilidad', 800, D, S.w, 170, -0.035);
-  popWord(ctx, 'contabilidad', x, 940 + cs * 1.05, cs, C.white, u, 2.3, { stagger: 0.018 });
+  popWord(ctx, 'contabilidad', x, 940 + cs * 1.05, cs, C.white, u, 1.55, { stagger: 0.018 });
   // A MANO? huge, lilac, with weight
   const ms = fitSize(ctx, 'A MANO?', 800, D, S.w, 260, -0.04);
   const my = 940 + cs * 1.05 + ms * 1.08;
-  popWord(ctx, 'A MANO?', x, my, ms, appGrad, u, 3.6, { stagger: 0.035, spring: SPRING.wobbly, track: -0.04 });
+  popWord(ctx, 'A MANO?', x, my, ms, appGrad, u, 2.8, { stagger: 0.035, spring: SPRING.wobbly, track: -0.04 });
   // the strike: a hand-drawn white zigzag across "A MANO?"
-  const sp = E.outCubic(prog(u, 5.0, 5.7));
+  const sp = E.outCubic(prog(u, 4.2, 4.9));
   if (sp > 0) {
     const L = layout(ctx, 'A MANO?', font(ms, 800, D), -0.04 * ms);
     ctx.save(); ctx.lineWidth = 22; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = C.white;
@@ -166,10 +166,10 @@ function sceneHook(ctx, u) {
   }
   ctx.restore();
   // brand dot arrives and grows to cover the frame (log-space dolly)
-  const dk = springU(u, 6, SPRING.bouncy);
+  const dk = springU(u, 5.25, SPRING.bouncy);
   if (dk > 0) {
     const gp = E.inCubic(prog(u, 6.8, 8));
-    const r = gp > 0 ? logR(64, 2300, gp) : 64 * dk * (1 + 0.2 * wobble(u - 6.3, 3, 5));
+    const r = gp > 0 ? logR(64, 2300, gp) : 64 * dk * (1 + 0.2 * wobble(u - 5.55, 3, 5));
     dot(ctx, W - S.x - 70, lerp(1500, H / 2, E.inOutCubic(gp)), r);
   }
 }
@@ -280,14 +280,14 @@ function sceneNomina(ctx, u) {
   softGlow(ctx, W * 0.15, H * 0.2, 800, C.purple, 0.45);
   softGlow(ctx, W * 0.95, H * 0.85, 700, C.purple, 0.35);
   // the list rises as the receipt comes in
-  const lift = springU(u, 30.6, SPRING.gentle) * 120;
+  const lift = springU(u, 30.85, SPRING.gentle) * 120;
   ctx.save(); ctx.translate(0, -lift);
   // real "MÓDULO LIBERADO" pill from the hero
   const kb = springU(u, 23.85, SPRING.bouncy);
   if (kb > 0) card(ctx, 'badge', S.x + 6 + 290, 320, 580, { r: 50, s: kb, shadow: false });
   popWord(ctx, 'Y ahora:', S.x, 470, 96, C.lilac, u, 24.0, { stagger: 0.02 });
   popWord(ctx, 'Nómina', S.x, 690, 210, C.white, u, 25.3, { stagger: 0.03, spring: SPRING.wobbly });
-  const items = [['calculada', 27.1], ['timbrada', 28.6], ['contabilizada', 30.0]];
+  const items = [['calculada', 27.3], ['timbrada', 29.1], ['contabilizada', 30.3]];
   items.forEach(([w, u0], i) => {
     const y = 830 + i * 108;
     check(ctx, S.x + 40, y - 30, 34, springU(u, u0 - 0.1, SPRING.bouncy));
@@ -295,7 +295,7 @@ function sceneNomina(ctx, u) {
   });
   ctx.restore();
   // real payroll receipt, then push toward "Neto a pagar"
-  const kr = springU(u, 30.6, SPRING.snappy);
+  const kr = springU(u, 30.85, SPRING.snappy);
   if (kr > 0) {
     const z = springKeys(u, [[31.5, 1], [32.1, 1.18]], SPRING.gentle);
     card(ctx, 'recibo', CX + (z - 1) * -220, lerp(H + 500, 1230, kr) - (z - 1) * 330, 860 * z, { r: 34 * z, shadowColor: 'rgba(0,0,0,0.5)' });
@@ -338,7 +338,7 @@ function sceneEnd(ctx, u) {
   if (u >= 41) dot(ctx, geo.dx, geo.dy, size * 0.075);
   ctx.restore();
   // the brand's own line, real asset
-  const kt = springU(u, 41.0, SPRING.snappy);
+  const kt = springU(u, 41.55, SPRING.snappy);
   if (kt > 0) card(ctx, 'tagline', CX, 910 + (1 - kt) * 40, 940, { shadow: false, alpha: clamp(kt), r: 0 });
   // CTA: the real button, pulsing on the downbeats after it lands
   const kc = springU(u, 45.6, SPRING.bouncy);

@@ -17,4 +17,5 @@ fisapp/audio/music.wav
 fisapp/audio/sfx.wav
 fisapp/audio/mix.wav
 fisapp/assets/shots/*_full.png
-tts/eleven/
+tts/eleven/*
+!tts/eleven/bella/
