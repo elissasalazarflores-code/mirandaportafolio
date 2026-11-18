@@ -19,3 +19,16 @@ fisapp/audio/mix.wav
 fisapp/assets/shots/*_full.png
 tts/eleven/*
 !tts/eleven/bella/
+out/fisapp2/*/
+out/fisapp2/video_*.mp4
+out/fisapp2/*_9x16.png
+!out/fisapp2/contact_9x16.png
+!out/fisapp2/poster_9x16.png
+out/fisapp2/hits.json
+fisapp2/audio/music.wav
+fisapp2/audio/sfx.wav
+fisapp2/audio/mix.wav
+fisapp2/assets/shots/*_full.png
+!tts/eleven/chris_final/
+tts/eleven/chris_final/t*.wav
+

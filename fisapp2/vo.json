@@ -1,0 +1,65 @@
+[
+ {
+  "line": 1,
+  "beat": 0.25,
+  "start": 0.127,
+  "end": 3.057,
+  "end_beat": 6.11
+ },
+ {
+  "line": 2,
+  "beat": 8.25,
+  "start": 4.127,
+  "end": 6.842,
+  "end_beat": 13.68
+ },
+ {
+  "line": 3,
+  "beat": 14.25,
+  "start": 7.127,
+  "end": 10.553,
+  "end_beat": 21.1
+ },
+ {
+  "line": 4,
+  "beat": 22,
+  "start": 11.002,
+  "end": 15.048,
+  "end_beat": 30.09
+ },
+ {
+  "line": 5,
+  "beat": 31,
+  "start": 15.502,
+  "end": 21.152,
+  "end_beat": 42.3
+ },
+ {
+  "line": 6,
+  "beat": 43.25,
+  "start": 21.627,
+  "end": 24.623,
+  "end_beat": 49.24
+ },
+ {
+  "line": 7,
+  "beat": 50,
+  "start": 25.002,
+  "end": 27.701,
+  "end_beat": 55.4
+ },
+ {
+  "line": 8,
+  "beat": 56.5,
+  "start": 28.252,
+  "end": 29.85,
+  "end_beat": 59.7
+ },
+ {
+  "line": 9,
+  "beat": 60.5,
+  "start": 30.252,
+  "end": 31.569,
+  "end_beat": 63.13
+ }
+]
