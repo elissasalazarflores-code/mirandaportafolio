@@ -1,0 +1,14 @@
+{
+ "step1":    ["section_05_c-mo-funciona-fisapp.png", [62,275,750,413]],
+ "dash":     ["section_02_todo-lo-que-necesitas-de-tu-informaci-n-.png", [1339,227,1036,734]],
+ "balanza":  ["section_01_tu-contabilidad-completa-de-tus-cfdi-al-.png", [1608,240,700,531]],
+ "recibo":   ["desktop_viewport.png", [1747,691,701,530]],
+ "nomtitle": ["desktop_viewport.png", [238,634,921,302]],
+ "badge":    ["desktop_viewport.png", [238,526,374,64]],
+ "privado":  ["section_07_tus-sellos-y-tu-e-firma-bajo-tu-control.png", [50,492,1085,393]],
+ "cifrada":  ["section_07_tus-sellos-y-tu-e-firma-bajo-tu-control.png", [1169,492,1085,393]],
+ "segbadge": ["section_07_tus-sellos-y-tu-e-firma-bajo-tu-control.png", [1036,130,231,54]],
+ "cta":      ["section_08_section.png", [697,122,422,106]],
+ "tagline":  ["section_08_section.png", [812,288,576,55]],
+ "tabs":     ["section_04_una-plataforma-todos-los-m-dulos.png", [539,201,1402,79]]
+}

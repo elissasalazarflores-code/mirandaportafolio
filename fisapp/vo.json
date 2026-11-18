@@ -1,0 +1,51 @@
+[
+ {
+  "line": 1,
+  "beat": 0.25,
+  "start": 0.127,
+  "end": 2.484,
+  "end_beat": 4.96
+ },
+ {
+  "line": 2,
+  "beat": 8.5,
+  "start": 4.252,
+  "end": 8.078,
+  "end_beat": 16.15
+ },
+ {
+  "line": 3,
+  "beat": 17,
+  "start": 8.502,
+  "end": 11.619,
+  "end_beat": 23.23
+ },
+ {
+  "line": 4,
+  "beat": 24,
+  "start": 12.002,
+  "end": 16.018,
+  "end_beat": 32.03
+ },
+ {
+  "line": 5,
+  "beat": 33,
+  "start": 16.502,
+  "end": 19.416,
+  "end_beat": 38.83
+ },
+ {
+  "line": 6,
+  "beat": 39.5,
+  "start": 19.752,
+  "end": 22.488,
+  "end_beat": 44.97
+ },
+ {
+  "line": 7,
+  "beat": 45.75,
+  "start": 22.877,
+  "end": 24.456,
+  "end_beat": 48.91
+ }
+]
