@@ -1,0 +1,427 @@
+<title>Parrilla EmiteGo Diciembre</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: hoja de planeación de pauta. Cabecera de marca, calendario 4×(L/M/V + stories), luego una ficha por pieza: maqueta a la izquierda, guion y copys a la derecha. */
+:root{
+  --navy:#193357; --navy-2:#24467a; --green:#059669; --green-soft:#e3f4ee;
+  --bg:#f5f7fb; --surface:#ffffff; --line:#dfe5ee; --ink:#0f172a; --ink-2:#475569; --ink-3:#64748b;
+  --chip:#eef2f8; --on-navy:#ffffff; --muted-on-navy:#b9c6da;
+  --display:"Plus Jakarta Sans",ui-sans-serif,system-ui,sans-serif;
+  --body:Inter,ui-sans-serif,system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b1322; --surface:#111c30; --line:#22324d; --ink:#e7edf6; --ink-2:#b2bfd2; --ink-3:#8b9ab1;
+  --chip:#1a2741; --green-soft:#0f2f28; --navy:#1d3b66; --navy-2:#2b4f86; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0b1322; --surface:#111c30; --line:#22324d; --ink:#e7edf6; --ink-2:#b2bfd2; --ink-3:#8b9ab1;
+  --chip:#1a2741; --green-soft:#0f2f28; --navy:#1d3b66; --navy-2:#2b4f86; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--body);margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+.eyebrow{font:600 11.5px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* Cabecera */
+header.top{background:var(--navy);color:var(--on-navy)}
+header.top .wrap{padding-block:36px 30px;display:grid;gap:22px}
+.brand{display:flex;align-items:center;gap:12px;font:800 20px var(--display)}
+.brand svg{width:40px;height:40px;flex:none}
+header.top h1{font-size:clamp(28px,4.4vw,44px);font-weight:800;max-width:22ch;line-height:1.08}
+header.top p{color:var(--muted-on-navy);max-width:68ch;margin:0}
+.facts{display:flex;flex-wrap:wrap;gap:10px}
+.fact{border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--on-navy)}
+.fact b{font-weight:600}
+
+main .wrap{padding-block:28px 64px;display:grid;gap:44px}
+main .wrap>section{min-width:0}
+section>h2{font-size:22px;margin-bottom:6px}
+section>.lede{color:var(--ink-2);margin:0 0 18px;max-width:72ch}
+
+/* Embudo */
+.funnel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.stage{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:6px;align-content:start}
+.stage .wk{font:600 12px var(--mono);color:var(--green)}
+.stage h3{font-size:16px}
+.stage p{margin:0;color:var(--ink-2);font-size:13.5px}
+.mix{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+
+/* Calendario */
+.cal-scroll{overflow-x:auto}
+.cal{display:grid;grid-template-columns:110px repeat(3,minmax(170px,1fr)) minmax(170px,1fr);gap:8px;min-width:820px}
+.cal .h{font:600 12px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:4px 2px}
+.cal .wkcell{display:grid;align-content:center;gap:2px;padding:8px 4px}
+.cal .wkcell b{font:700 15px var(--display)}
+.cal .wkcell span{font-size:12.5px;color:var(--ink-3)}
+.slot{display:grid;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}
+.slot:hover,.slot:focus-visible{border-color:var(--green);transform:translateY(-1px);outline:none}
+.slot .d{font:500 12px var(--mono);color:var(--ink-3)}
+.slot .t{font:700 14px/1.3 var(--display)}
+.slot.st{background:var(--chip);border-style:dashed}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 11.5px var(--body);padding:3px 9px;border-radius:999px;background:var(--chip);color:var(--ink-2);width:max-content}
+.tag i{width:7px;height:7px;border-radius:50%;background:currentColor;display:block}
+.tag.reel{color:#b4236b;background:color-mix(in srgb,#b4236b 12%,transparent)}
+.tag.carrusel{color:#2563eb;background:color-mix(in srgb,#2563eb 12%,transparent)}
+.tag.fijo{color:#b45309;background:color-mix(in srgb,#b45309 13%,transparent)}
+.tag.story{color:var(--green);background:color-mix(in srgb,var(--green) 13%,transparent)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tag.reel{color:#f472b6}:root:not([data-theme="light"]) .tag.carrusel{color:#7aa7ff}:root:not([data-theme="light"]) .tag.fijo{color:#f5b04a}:root:not([data-theme="light"]) .tag.story{color:#34d399}}
+:root[data-theme="dark"] .tag.reel{color:#f472b6}:root[data-theme="dark"] .tag.carrusel{color:#7aa7ff}:root[data-theme="dark"] .tag.fijo{color:#f5b04a}:root[data-theme="dark"] .tag.story{color:#34d399}
+
+/* Filtros */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.filters button{font:600 13px var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink-2);padding:7px 14px;border-radius:999px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--on-navy)}
+.filters button:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+
+/* Fichas */
+.pieces{display:grid;gap:22px}
+.piece{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;scroll-margin-top:16px}
+.piece-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:16px 20px;border-bottom:1px solid var(--line)}
+.piece-head .id{font:700 13px var(--mono);color:var(--on-navy);background:var(--navy);padding:4px 8px;border-radius:6px}
+.piece-head h3{font-size:19px;flex:1 1 260px}
+.piece-head .when{font:500 13px var(--mono);color:var(--ink-3)}
+.piece-body{display:grid;grid-template-columns:minmax(0,330px) minmax(0,1fr);gap:24px;padding:20px}
+.meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;margin-bottom:18px}
+.meta div{min-width:0}
+.meta dt{font:600 11px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:2px}
+.meta dd{margin:0;font-size:13.5px;color:var(--ink)}
+.meta .wide{grid-column:1/-1}
+.block{display:grid;gap:10px;margin-top:18px}
+.block>h4{font-size:14px;display:flex;align-items:center;gap:8px}
+
+/* Guion */
+.scenes{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+.scenes table{border-collapse:collapse;width:100%;min-width:560px;font-size:13px}
+.scenes th{text-align:left;font:600 11px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);background:var(--chip);padding:8px 10px}
+.scenes td{padding:9px 10px;border-top:1px solid var(--line);vertical-align:top}
+.scenes td:first-child{font:500 12px var(--mono);white-space:nowrap;color:var(--ink-3)}
+.scenes td.vo{color:var(--ink);font-style:italic}
+.scenes td.os{font-weight:600}
+
+.slides{display:grid;gap:8px;counter-reset:s;margin:0;padding:0}
+.slides li{list-style:none;display:grid;grid-template-columns:30px 1fr;gap:10px;font-size:13.5px}
+.slides li::before{counter-increment:s;content:counter(s);font:600 12px var(--mono);color:var(--ink-3);background:var(--chip);border-radius:6px;height:24px;display:grid;place-items:center}
+.slides b{display:block;font-family:var(--display)}
+.slides span{white-space:pre-line;color:var(--ink-2)}
+.slides ul{margin:0;padding:0}
+
+/* Copys */
+.copy{border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.copy-row{display:grid;grid-template-columns:120px minmax(0,1fr) auto;gap:12px;padding:10px 12px;border-top:1px solid var(--line);align-items:start}
+.copy-row:first-child{border-top:0}
+.copy-row .k{font:600 11px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding-top:3px}
+.copy-row .v{white-space:pre-line;font-size:14px;min-width:0;overflow-wrap:anywhere}
+.copy-row .v.url{font:12px var(--mono);color:var(--ink-2)}
+.copy-row .cnt{font:11px var(--mono);color:var(--ink-3);display:block;margin-top:4px}
+.btn-copy{font:600 12px var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink-2);border-radius:7px;padding:5px 10px;cursor:pointer;white-space:nowrap}
+.btn-copy:hover{border-color:var(--green);color:var(--green)}
+.btn-copy:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.cta-chip{display:inline-block;background:var(--navy);color:var(--on-navy);font:600 13px var(--body);padding:5px 12px;border-radius:6px}
+.note{font-size:13px;color:var(--ink-2);background:var(--chip);border-radius:10px;padding:10px 12px}
+.note b{color:var(--ink)}
+
+/* Maquetas */
+.mock-col{display:grid;gap:12px;align-content:start}
+.phone{position:relative;aspect-ratio:9/16;max-width:100%;width:100%;border-radius:22px;overflow:hidden;background:linear-gradient(165deg,var(--navy-2),#0f2140 70%);color:#fff;display:grid;grid-template-rows:auto 1fr auto;padding:18px 16px;box-shadow:0 10px 30px rgba(15,23,42,.18)}
+.phone .ph-top{display:flex;align-items:center;gap:8px;font:700 13px var(--display)}
+.phone .ph-top svg{width:24px;height:24px}
+.phone .ph-top .sp{font:500 11px var(--body);opacity:.7;margin-left:auto}
+.phone .hook{align-self:center;font:800 clamp(22px,2.6vw,28px)/1.12 var(--display);text-wrap:balance}
+.phone .cap{justify-self:center;background:rgba(0,0,0,.45);font:600 13px var(--body);padding:5px 10px;border-radius:6px;text-align:center;min-height:2.6em;display:grid;place-items:center}
+.phone .ph-bot{display:grid;gap:10px;margin-top:12px}
+.phone .ad-cta{background:#fff;color:#0f2140;font:700 13px var(--body);text-align:center;padding:9px;border-radius:8px}
+.phone .spons{font:500 11px var(--body);opacity:.7}
+.post{aspect-ratio:4/5;max-width:100%;width:100%;border-radius:14px;overflow:hidden;background:var(--navy);color:#fff;display:grid;grid-template-rows:auto 1fr auto;padding:22px;position:relative}
+.post .big{align-self:center;font:800 clamp(30px,4vw,46px)/1.02 var(--display);white-space:pre-line;text-wrap:balance}
+.post .sub{font-size:14px;color:#cfe0f5;max-width:30ch}
+.post .badge{justify-self:start;background:var(--green);color:#fff;font:700 12px var(--body);padding:6px 10px;border-radius:6px;margin-top:14px}
+.post .ring{position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;border:14px solid rgba(5,150,105,.55);border-right-color:transparent;transform:rotate(-30deg)}
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:78%;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+.strip .post{scroll-snap-align:start;padding:18px}
+.strip .post .big{font-size:clamp(20px,2.2vw,24px)}
+.strip .post .sub{white-space:pre-line;font-size:12.5px}
+.strip .post.alt{background:#eef2f8;color:#0f2140}
+.strip .post.alt .sub{color:#334155}
+.strip .post .n{font:600 11px var(--mono);opacity:.7}
+.stories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.stories .phone{border-radius:14px;padding:10px;grid-template-rows:auto 1fr;box-shadow:none}
+.stories .phone .hook{font-size:14px;line-height:1.2}
+.stories .phone .vis{font-size:10.5px;opacity:.75;align-self:end}
+
+.play{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--surface)}
+.play button{width:34px;height:34px;border-radius:50%;border:0;background:var(--green);color:#fff;display:grid;place-items:center;cursor:pointer;flex:none}
+.play button:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+.play .bar{flex:1;height:5px;background:var(--chip);border-radius:3px;overflow:hidden}
+.play .bar i{display:block;height:100%;width:0;background:var(--green)}
+.play .tm{font:500 12px var(--mono);color:var(--ink-3);min-width:76px;text-align:right}
+.play .lbl{font:600 12px var(--body);color:var(--ink-2)}
+
+/* Voz y pauta */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:grid;gap:10px;align-content:start}
+.panel h3{font-size:16px}
+.panel ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:14px;display:grid;gap:6px}
+.panel code{font:12.5px var(--mono);background:var(--chip);padding:2px 6px;border-radius:5px;overflow-wrap:anywhere}
+.split{display:grid;gap:8px}
+.split .row{display:grid;grid-template-columns:150px 1fr 44px;gap:10px;align-items:center;font-size:13.5px}
+.split .track{height:10px;background:var(--chip);border-radius:5px;overflow:hidden}
+.split .track i{display:block;height:100%;background:var(--navy-2)}
+.split .pct{font:600 12.5px var(--mono);text-align:right}
+
+footer{color:var(--ink-3);font-size:12.5px;padding-block:0 40px}
+
+@media (max-width:860px){
+  .piece-body{grid-template-columns:1fr}
+  .mock-col{max-width:340px}
+  .funnel{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .two{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .funnel{grid-template-columns:1fr}
+  .meta{grid-template-columns:1fr}
+  .copy-row{grid-template-columns:1fr auto}
+  .copy-row .k{grid-column:1/-1}
+  .split .row{grid-template-columns:110px 1fr 40px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#fff" fill-opacity=".12"/><path d="M15.5 10.5h12.8l5.2 5.2v19.3a2.5 2.5 0 0 1-2.5 2.5H15.5a2.5 2.5 0 0 1-2.5-2.5V13a2.5 2.5 0 0 1 2.5-2.5z" fill="#fff"/><path d="M28.3 10.5l5.2 5.2h-5.2z" fill="#AEBBCE"/><path d="M18.6 22.2l12.6 3.4-9.4 2.5-1.1 4.6-1.9-4-3.3.9 3.1-7.4z" fill="#193357"/></svg>EmiteGo</div>
+    <div class="eyebrow" style="color:var(--muted-on-navy)">Parrilla de anuncios · Meta Ads (Instagram y Facebook)</div>
+    <h1>Tu ERP vende. EmiteGo factura. Un mes de anuncios, del primer clic al registro.</h1>
+    <p>12 piezas (6 reels, 4 carruseles, 2 posts fijos) publicadas lunes, miércoles y viernes, más 4 sets de stories que corren toda la semana. Cada pieza trae objetivo de campaña, audiencia, guion, copys con los límites de Meta, URL con UTM y voz en off.</p>
+    <div class="facts">
+      <span class="fact"><b>23 nov – 18 dic 2026</b></span>
+      <span class="fact">Lun · Mié · Vie</span>
+      <span class="fact">10 voces en off · <b>3 min 30 s</b></span>
+      <span class="fact">Destino: emitego.com.mx/register</span>
+    </div>
+  </div>
+</header>
+
+<main><div class="wrap">
+
+<section id="estrategia">
+  <h2>La ruta del mes</h2>
+  <p class="lede">Cada semana empuja un paso del embudo. Las primeras piezas buscan alcance barato; desde la semana 2 cada reel alimenta audiencias de retargeting que las piezas siguientes convierten.</p>
+  <div class="funnel" id="funnel"></div>
+  <div class="mix">
+    <span class="tag reel"><i></i>Reel × 6</span>
+    <span class="tag carrusel"><i></i>Carrusel × 4</span>
+    <span class="tag fijo"><i></i>Post fijo × 2</span>
+    <span class="tag story"><i></i>Stories × 4 sets</span>
+  </div>
+</section>
+
+<section id="calendario">
+  <h2>Calendario</h2>
+  <p class="lede">Toca una pieza para ir a su ficha.</p>
+  <div class="cal-scroll"><div class="cal" id="cal"></div></div>
+</section>
+
+<section id="piezas">
+  <h2>Fichas de cada pieza</h2>
+  <p class="lede">Los copys ya están escritos para Ads: el texto principal pone el gancho en los primeros 125 caracteres, el titular cabe en 40 y la descripción en 30.</p>
+  <div class="filters" role="group" aria-label="Filtrar por formato" id="filters"></div>
+  <div class="pieces" id="pieces"></div>
+</section>
+
+<section id="voz">
+  <h2>Voz en off y producción</h2>
+  <div class="two">
+    <div class="panel">
+      <h3>Voz: Liam · ElevenLabs</h3>
+      <ul>
+        <li>Masculina, joven y animada, de estilo creador de redes. Modelo <code>eleven_multilingual_v2</code> en español, velocidad 1.08 y estilo 0.45 para darle energía.</li>
+        <li>Cada audio se revisó con transcripción automática: la marca se pronuncia «Emite Go», y RFC, SAT, ERP e IVA se entienden claro.</li>
+        <li>Tu cuenta de ElevenLabs está en plan gratuito, que solo permite voces predeterminadas por API. Las voces mexicanas nativas que ya tienes guardadas (<b>Beto Viral</b>, acento mexicano neutro, e <b>Isaac</b>, joven y amigable) piden plan Starter o superior. Con el plan activo, el mismo guion se vuelve a generar con un comando: <code>python3 emitego/vo.py T0etfMyJ0xd14aP2WsOi</code></li>
+        <li>Junto a cada MP3 hay un archivo .srt con los subtítulos sincronizados, listo para CapCut o Premiere (carpeta <code>emitego/vo</code> del repositorio).</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Reglas para que funcione como anuncio</h3>
+      <ul>
+        <li>Subtítulos quemados en todos los reels: la mayoría los ve sin sonido.</li>
+        <li>El gancho visual y de texto aparece antes del segundo 1.</li>
+        <li>Stories: deja libre el 14% superior y el 20% inferior para la interfaz y el botón.</li>
+        <li>Música animada a −18 dB debajo de la voz; sin canciones con derechos en anuncios.</li>
+        <li>Precios siempre con «+ IVA». Testimonios tal como aparecen en el sitio.</li>
+        <li>Prueba A/B del gancho: cada pieza trae una variante B. Corre ambas 3 días y deja la de menor costo por resultado.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Reparto sugerido del presupuesto</h3>
+      <div class="split" id="split"></div>
+      <p style="margin:0;font-size:13px;color:var(--ink-3)">La semana 3 lleva más peso porque ahí va la pieza estrella (factura por WhatsApp) y ya hay audiencias de retargeting llenas.</p>
+    </div>
+    <div class="panel">
+      <h3>Qué medir</h3>
+      <ul>
+        <li>Reels de descubrimiento: costo por ThruPlay y % de reproducción al 50%.</li>
+        <li>Tráfico: CTR del enlace mayor a 1% y costo por visita a la página de destino.</li>
+        <li>Conversión: costo por registro (evento CompleteRegistration en /register) y registros que timbran su primer CFDI.</li>
+        <li>WhatsApp: conversaciones iniciadas y costo por conversación.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</div></main>
+<footer><div class="wrap">Contenido basado en emitego.com.mx (planes, guía de acceso, demo y testimonios publicados). Datos de los ejemplos: ficticios, tomados del demo oficial.</div></footer>
+
+<script id="data" type="application/json">{"marca": "EmiteGo", "periodo": "23 nov – 18 dic 2026 · Lun / Mié / Vie", "url": "https://emitego.com.mx/register", "voz": {"nombre": "Liam (premade)", "voice_id": "TX3LPaxmHKxFdv7VOQHJ", "modelo": "eleven_multilingual_v2"}, "piezas": [{"id": "R01", "fecha": "2026-11-23", "dia": "Lun 23 nov", "semana": 1, "etapa": "Descubrimiento", "formato": "Reel", "medida": "9:16 · 1080×1920 · 25–30 s", "objetivo": "Reconocimiento · optimizar a ThruPlay", "audiencia": "Dueños y gerentes de pyme, administración y facturación (México, 25–55). Intereses: facturación electrónica, SAT, CONTPAQi, Aspel, contabilidad para negocios.", "titulo": "Tu ERP vende. EmiteGo factura.", "hook": "¿Otra vez capturando la misma venta dos veces?", "escenas": [{"t": "0–3 s", "visual": "Persona frente a dos pantallas copiando datos de un lado a otro; corte rápido con zoom al teclado.", "texto": "¿La misma venta… capturada 2 veces? 😩", "vo": "¿Otra vez capturando la misma venta dos veces?"}, {"t": "3–7 s", "visual": "Split screen: ERP a la izquierda, portal del PAC a la derecha. Flechas rojas de ida y vuelta.", "texto": "ERP ➜ portal ➜ correo ➜ Excel", "vo": "Una en tu sistema… y otra en el portal para facturar. ¡Ya no!"}, {"t": "7–11 s", "visual": "Pantalla se limpia en azul EmiteGo #193357. Logo entra con rebote.", "texto": "Tu ERP vende. EmiteGo factura.", "vo": "Con EmiteGo, tu ERP vende… y EmiteGo factura."}, {"t": "11–19 s", "visual": "Animación del flujo con 4 checks verdes (#059669) que se encienden en secuencia sobre la bandeja de CFDI.", "texto": "✓ Valida ✓ Timbra ✓ Envía ✓ Regresa XML y PDF", "vo": "Valida los datos, timbra ante el SAT, se la manda a tu cliente y regresa el XML y el PDF a tu sistema. Todo solito."}, {"t": "19–23 s", "visual": "Persona ahora relajada, atendiendo a un cliente / cerrando una venta.", "texto": "Tú dedícate a vender.", "vo": "Tú dedícate a vender."}, {"t": "23–28 s", "visual": "End card: logo, mockup de la bandeja y botón.", "texto": "15 días gratis · sin tarjeta", "vo": "EmiteGo: factura en automático. Pruébalo quince días gratis, sin tarjeta."}], "copy": {"principal": "¿Tu equipo captura cada venta dos veces: en el ERP y en el portal de facturación? 😮‍💨\n\nCon EmiteGo, cuando tu ERP confirma una venta, la factura CFDI 4.0 se valida, se timbra ante el SAT, se envía a tu cliente y el XML y el PDF regresan a tu sistema. Sin capturas manuales.\n\n✅ Facturas ilimitadas desde $99/mes + IVA\n✅ CONTPAQi, SAP B1, Aspel, Microsip, Odoo y más\n✅ 15 días gratis, sin tarjeta", "titular": "Tu ERP vende. EmiteGo factura.", "descripcion": "Prueba 15 días gratis", "cta": "Registrarte", "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=r01_erp_vende"}, "variante": "Hook B: «Si facturas en tres lugares distintos, este video es para ti.»", "notas": "Subtítulos quemados siempre (85% ve sin sonido). Primer texto en pantalla antes del segundo 1. Música urbana/lo-fi animada a −18 dB debajo de la voz.", "vo_dur": 28.7}, {"id": "C02", "fecha": "2026-11-25", "dia": "Mié 25 nov", "semana": 1, "etapa": "Descubrimiento", "formato": "Carrusel", "medida": "4:5 · 1080×1350 · 7 slides", "objetivo": "Tráfico · visitas a la página de destino", "audiencia": "Pymes que facturan volumen + lookalike 1% de visitantes del sitio.", "titulo": "No es un timbrador más", "hook": "Tu área de facturación, en automático.", "slides": [{"titulo": "Tu área de facturación, en automático.", "texto": "No es un timbrador más. Desliza 👉"}, {"titulo": "Así facturas hoy", "texto": "ERP ➜ portal del PAC ➜ correo ➜ Excel.\n4 lugares. La misma venta. Capturada dos veces."}, {"titulo": "Así factura EmiteGo", "texto": "Tu ERP confirma la venta y EmiteGo:\n✓ valida los datos fiscales\n✓ genera el CFDI 4.0\n✓ lo timbra ante el SAT\n✓ lo envía a tu cliente"}, {"titulo": "Y todo regresa a tu ERP", "texto": "Folio, UUID, XML y PDF de vuelta en tu sistema para cerrar la póliza sin capturas manuales."}, {"titulo": "Control que sí se audita", "texto": "Validación antes de timbrar · CFDI inmutable · bitácora de cada movimiento · cola de errores con reintento."}, {"titulo": "Hecho para", "texto": "🏢 Pymes que facturan cientos al mes\n🧮 Contadores y despachos con varios RFC\n⚙️ Equipos con ERP"}, {"titulo": "Empieza gratis hoy", "texto": "15 días · 5 timbres de prueba · sin tarjeta.\nemitego.com.mx"}], "copy": {"principal": "La mayoría de los sistemas timbra y ahí termina. EmiteGo hace todo el ciclo: valida, genera, timbra, envía y regresa el XML y el PDF a tu ERP. 🔁\n\nDesliza y mira cómo se ve tu facturación sin capturar dos veces 👉\n\nPrueba 15 días gratis, sin tarjeta.", "titular": "Tu facturación, en automático", "descripcion": "CFDI 4.0 · SAT", "cta": "Más información", "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=c02_no_timbrador"}, "variante": "Portada B: «Tu ERP ya vende solo. ¿Por qué tu facturación no?»", "notas": "Slides 2 y 3 en espejo (antes en gris / después en azul) para que el contraste se lea al deslizar. Máximo 20 palabras por slide."}, {"id": "P03", "fecha": "2026-11-27", "dia": "Vie 27 nov", "semana": 1, "etapa": "Descubrimiento", "formato": "Post fijo", "medida": "4:5 · 1080×1350", "objetivo": "Tráfico · visitas a la página de destino", "audiencia": "Freelancers, profesionistas y arrendadores (plan Individual) + pymes.", "titulo": "60 segundos", "hook": "60 s", "arte": {"headline": "60 segundos.", "sub": "Lo que tardas en emitir una factura CFDI 4.0 completa con EmiteGo.", "visual": "Número gigante «60 s» con anillo de cronómetro en verde #059669. Abajo, tarjeta flotante: «CFDI timbrado ✔ · A-1043 · $1,844.40». Sello: «15 días gratis · sin tarjeta»."}, "copy": {"principal": "Eliges al cliente, agregas conceptos y timbras. ⏱️ Menos de 60 segundos.\n\nEmiteGo hereda uso de CFDI, método y forma de pago desde tu catálogo, calcula el IVA y le envía el XML y el PDF a tu cliente en automático.\n\nFacturas ilimitadas desde $99/mes + IVA. Pruébalo gratis 15 días.", "titular": "Factura en menos de 60 segundos", "descripcion": "Sin instalar nada", "cta": "Registrarte", "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=p03_60s"}, "variante": "Headline B: «¿Facturar te toma más de un minuto? Te está costando.»", "notas": "Texto en imagen < 20% del área. El número debe leerse en miniatura de feed."}, {"id": "R04", "fecha": "2026-11-30", "dia": "Lun 30 nov", "semana": 2, "etapa": "Cómo funciona", "formato": "Reel", "medida": "9:16 · 1080×1920 · 30 s", "objetivo": "Tráfico · visitas a la página de destino", "audiencia": "Retargeting: vieron 50% de R01 + interactuaron con C02/P03 (14 días). Abierto: pymes.", "titulo": "3 pasos y ya estás facturando", "hook": "¿Facturar te quita horas?", "escenas": [{"t": "0–3 s", "visual": "Talento a cámara, gesto de «mira esto», jump-cut a pantalla.", "texto": "Factura en 3 pasos 👇", "vo": "¿Facturar te quita horas? Mira qué fácil arrancas con EmiteGo."}, {"t": "3–10 s", "visual": "Grabación de pantalla: registro y carga del CSD (.cer, .key, contraseña). Sticker «01».", "texto": "01 · Crea tu cuenta y sube tus sellos", "vo": "Paso uno: crea tu cuenta y sube tus sellos digitales."}, {"t": "10–18 s", "visual": "Importación de Excel; filas se ponen en verde una por una.", "texto": "02 · Importa clientes y productos", "vo": "Paso dos: importa tus clientes y productos desde Excel. EmiteGo valida RFC, régimen y código postal."}, {"t": "18–25 s", "visual": "Nueva factura: seleccionar cliente, agregar concepto, botón «Timbrar» con click sonoro y confeti sutil.", "texto": "03 · Elige, agrega y ¡timbra!", "vo": "Paso tres: elige cliente, agrega conceptos y ¡timbra! Tu factura sale en menos de un minuto."}, {"t": "25–30 s", "visual": "Laptop + celular con EmiteGo abierto. End card.", "texto": "Sin instalar nada · 15 días gratis", "vo": "Sin instalar nada, todo desde el navegador. Empieza gratis hoy."}], "copy": {"principal": "Así de fácil empiezas a facturar con EmiteGo 👇\n\n1️⃣ Crea tu cuenta y sube tus sellos digitales (CSD)\n2️⃣ Importa clientes y productos desde Excel (validamos RFC, régimen y CP)\n3️⃣ Elige cliente, agrega conceptos y timbra\n\nSin instalaciones: todo desde tu navegador. 15 días gratis, sin tarjeta.", "titular": "Factura hoy mismo en 3 pasos", "descripcion": "Listo en 15 minutos", "cta": "Registrarte", "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=r04_3pasos"}, "variante": "Hook B: «Te enseño a facturar en 30 segundos. Literal.»", "notas": "Grabar pantalla real en ambiente de pruebas (sandbox) con los datos ficticios del demo. Números de paso grandes y consistentes.", "vo_dur": 28.7}, {"id": "C05", "fecha": "2026-12-02", "dia": "Mié 2 dic", "semana": 2, "etapa": "Cómo funciona", "formato": "Carrusel", "medida": "4:5 · 1080×1350 · 8 slides", "objetivo": "Clientes potenciales · registro (CompleteRegistration)", "audiencia": "Pymes y profesionistas que aún no facturan en línea + retargeting de visitas a /guia.", "titulo": "Checklist: tu primera factura hoy", "hook": "¿Qué necesito para facturar con EmiteGo?", "slides": [{"titulo": "¿Qué necesito para facturar con EmiteGo?", "texto": "Guárdalo 📌 Con esto dejas tu cuenta lista en 15 minutos."}, {"titulo": "✅ Tu RFC activo", "texto": "Razón social y régimen fiscal tal cual aparecen en el SAT. Si no coinciden, el timbrado se rechaza."}, {"titulo": "✅ Tus sellos digitales (CSD)", "texto": "Archivo .cer, archivo .key y su contraseña.\nOjo: el CSD no es la e.firma."}, {"titulo": "✅ Un correo activo", "texto": "Te llega un código de 6 dígitos para activar tu cuenta."}, {"titulo": "✅ Datos de tus clientes", "texto": "RFC, régimen, código postal y uso de CFDI. Súbelos uno por uno o en Excel."}, {"titulo": "✅ Tu logo (opcional)", "texto": "PNG o JPG para que tus PDF lleven tu marca."}, {"titulo": "La ruta completa", "texto": "Cuenta 2 min ➜ Empresa 5 min ➜ Sellos 3 min ➜ Catálogos 10 min ➜ Factura 1 min"}, {"titulo": "¿Listo? Empieza gratis", "texto": "Sin instalar nada. Desde tu navegador.\n15 días · sin tarjeta · emitego.com.mx"}], "copy": {"principal": "📌 Guarda este checklist: con estos 5 datos dejas tu cuenta lista para timbrar hoy mismo.\n\nRFC activo · sellos digitales (CSD) · un correo · datos de tus clientes · tu logo (opcional).\n\nEmiteGo valida todo contra los catálogos del SAT antes de timbrar, para que ninguna factura te rebote. Empieza gratis 👇", "titular": "Tu primera factura, hoy mismo", "descripcion": "15 días gratis, sin tarjeta", "cta": "Registrarte", "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=c05_checklist"}, "variante": "Portada B: «5 cosas que necesitas para facturar hoy (la 2 casi todos la confunden)».", "notas": "Formato checklist con casillas que se marcan; ideal para guardados. Slide 3 destacar «no es la e.firma» (duda frecuente)."}, {"id": "R06", "fecha": "2026-12-04", "dia": "Vie 4 dic", "semana": 2, "etapa": "Cómo funciona", "formato": "Reel", "medida": "9:16 · 1080×1920 · 30 s", "objetivo": "Clientes potenciales · registro (CompleteRegistration)", "audiencia": "Retargeting: vieron 50% de R01/R04, visitantes del sitio 30 días que no se registraron.", "titulo": "Reto: una factura en 60 segundos", "hook": "Te reto: una factura completa en sesenta segundos.", "escenas": [{"t": "0–3 s", "visual": "Cronómetro grande en pantalla arrancando en 00:60. Talento señala a cámara.", "texto": "RETO: factura en 60 s ⏱️", "vo": "Te reto: una factura completa en sesenta segundos. ¿Va? ¡Arrancamos!"}, {"t": "3–9 s", "visual": "Pantalla: buscador de clientes, se elige «Distribuidora Peninsular»; los campos fiscales se autollenan.", "texto": "Cliente ✓ datos fiscales ya cargados", "vo": "Eliges a Distribuidora Peninsular… sus datos fiscales ya están."}, {"t": "9–15 s", "visual": "Se agrega «Servicio de facturación mensual»; panel de totales calcula IVA 16%.", "texto": "IVA calculado solo", "vo": "Agregas el servicio… y el IVA se calcula solito."}, {"t": "15–20 s", "visual": "Zoom al total $1,844.40 y click en «Timbrar factura».", "texto": "Total: $1,844.40 ➜ Timbrar", "vo": "Revisas el total: mil ochocientos cuarenta y cuatro pesos. ¡Timbrar!"}, {"t": "20–26 s", "visual": "Bandeja: «CFDI timbrado correctamente», UUID, XML, PDF; animación del sobre saliendo al correo.", "texto": "✔ Folio fiscal · XML · PDF · enviada", "vo": "Listo: folio fiscal, XML y PDF… y ya va en camino al correo de tu cliente."}, {"t": "26–30 s", "visual": "Cronómetro detenido en 00:18. Talento celebra. End card.", "texto": "Y sobraron 42 s 😎 · Empieza gratis", "vo": "Y todavía me sobró tiempo. Así se factura con EmiteGo."}], "copy": {"principal": "Reto aceptado ⏱️ Una factura CFDI 4.0 completa en menos de 60 segundos.\n\nCliente con datos fiscales precargados ➜ conceptos con clave SAT ➜ IVA calculado ➜ timbrada ➜ enviada por correo con XML y PDF.\n\n¿Cuánto tardas tú hoy? Haz la prueba con 5 timbres gratis 👇", "titular": "¿Aceptas el reto de 60 segundos?", "descripcion": "5 timbres de prueba gratis", "cta": "Registrarte", "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=r06_reto60"}, "variante": "Hook B: «Cronometré cuánto tardo en facturar con EmiteGo…»", "notas": "Usar los datos ficticios del demo oficial (Distribuidora Peninsular, A-1043, $1,844.40). El cronómetro debe estar visible todo el video: es el gancho de retención.", "vo_dur": 28.0}, {"id": "R07", "fecha": "2026-12-07", "dia": "Lun 7 dic", "semana": 3, "etapa": "Diferenciadores", "formato": "Reel", "medida": "9:16 · 1080×1920 · 30 s", "objetivo": "Interacción · mensajes a WhatsApp (o Registro)", "audiencia": "Dueños de negocio, profesionistas y equipos comerciales que trabajan desde el celular. Intereses: WhatsApp Business, emprendimiento, ventas.", "titulo": "Factura por WhatsApp", "hook": "Espérate… ¿facturar por WhatsApp?", "escenas": [{"t": "0–3 s", "visual": "Primer plano del celular; llega notificación de WhatsApp «Asistente EmiteGo». Talento con cara de sorpresa.", "texto": "¿Facturar por WhatsApp? 🤯", "vo": "Espérate… ¿facturar por WhatsApp? ¡Sí!"}, {"t": "3–10 s", "visual": "Se escribe el mensaje en el chat, letra por letra.", "texto": "«Factura a Grupo Comercial del Norte, 2 servicios de consultoría de $1,500»", "vo": "Le escribes al asistente de EmiteGo como a cualquier contacto: factura a Grupo Comercial del Norte, dos servicios de consultoría de mil quinientos."}, {"t": "10–17 s", "visual": "Respuesta del asistente con RFC, conceptos, IVA y total $3,480.00.", "texto": "Busca cliente ✓ valida RFC ✓ calcula IVA ✓", "vo": "Él busca al cliente, valida el RFC, calcula el IVA y te muestra el total."}, {"t": "17–23 s", "visual": "Se escribe «Sí, clave 481902»; aparece candado y «CFDI timbrado ✔».", "texto": "Confirmas con tu clave de 6 dígitos 🔒", "vo": "Confirmas con tu clave de seis dígitos… y listo: factura timbrada."}, {"t": "23–30 s", "visual": "Mensaje final «PDF y XML enviados a facturacion@…». End card con botón de WhatsApp.", "texto": "Sin formularios. Sin instalar nada.", "vo": "El PDF y el XML ya le llegaron a tu cliente. Sin formularios, sin instalar nada. Solo en EmiteGo."}], "copy": {"principal": "Sí: ahora puedes facturar por WhatsApp. 💬\n\nEscribe a quién le facturas y qué conceptos, con tus propias palabras. El asistente de EmiteGo busca al cliente, valida RFC, régimen y CP, calcula impuestos y te muestra el resumen.\n\n🔒 Nadie timbra por ti: confirmas con tu clave de 6 dígitos (vigente 15 min, de un solo uso).\n📩 El PDF y el XML llegan al correo de tu cliente al instante.", "titular": "Factura por WhatsApp, sin formularios", "descripcion": "Exclusivo de EmiteGo", "cta": "Enviar mensaje de WhatsApp", "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=r07_whatsapp"}, "variante": "Hook B: «Este cliente me pidió factura… y la hice desde el chat en 20 segundos.»", "notas": "Pieza estrella: invertir el mayor presupuesto de la semana 3. El agente de WhatsApp es del plan Ilimitado: mencionarlo en la página de destino. Destino: wa.me/525527177550.", "vo_dur": 32.5}, {"id": "C08", "fecha": "2026-12-09", "dia": "Mié 9 dic", "semana": 3, "etapa": "Diferenciadores", "formato": "Carrusel", "medida": "4:5 · 1080×1350 · 7 slides", "objetivo": "Clientes potenciales · registro (CompleteRegistration)", "audiencia": "Contadores públicos y despachos contables. Intereses: contaduría, IMCP, despacho contable, CONTPAQi, SAT. Cargo: contador, auxiliar contable.", "titulo": "Contadores: todos tus RFC en una cuenta", "hook": "Contador: ¿cuántas pestañas abres para facturar a tus clientes?", "slides": [{"titulo": "Contador: ¿cuántas pestañas abres para facturar a tus clientes?", "texto": "Hay una forma más fácil 👉"}, {"titulo": "Varios RFC. Una sola cuenta.", "texto": "Cada empresa con sus series, folios, sucursales e impuestos."}, {"titulo": "Cambias de RFC con un clic", "texto": "Desde la barra superior. Todos sus datos se mueven con él."}, {"titulo": "Te avisa ANTES de timbrar", "texto": "Si el régimen o el código postal no coinciden, lo sabes antes de que el SAT lo rechace."}, {"titulo": "Masiva, recurrente y global", "texto": "Lotes desde Excel validados fila por fila, suscripciones que se facturan solas y factura global mensual. En una sola pantalla."}, {"titulo": "«Llevo catorce RFC de mis clientes desde una sola cuenta.»", "texto": "— Javier L., contador · despacho fiscal, CDMX"}, {"titulo": "Plan Despacho: $199/mes + IVA", "texto": "Hasta 10 RFC · 5 usuarios · facturas ilimitadas.\n¿Más RFC? Plan Ilimitado, sin tope.\nPrueba 15 días gratis."}], "copy": {"principal": "Contador/a: deja de saltar entre portales para facturar a cada cliente. 🧮\n\nCon EmiteGo manejas varios RFC desde una sola cuenta, cada uno con sus series, folios y sucursales. Y la validación previa te avisa si el régimen o el CP no coinciden ANTES de timbrar.\n\nPlan Despacho: hasta 10 RFC y 5 usuarios por $199/mes + IVA, con facturas ilimitadas.", "titular": "Todos tus RFC en una sola cuenta", "descripcion": "Plan Despacho $199/mes", "cta": "Registrarte", "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=c08_contadores"}, "variante": "Portada B: «Si llevas más de 3 RFC, necesitas ver esto.»", "notas": "El testimonio es real del sitio: usar nombre abreviado tal como aparece. Tono de colega a colega."}, {"id": "P09", "fecha": "2026-12-11", "dia": "Vie 11 dic", "semana": 3, "etapa": "Diferenciadores", "formato": "Post fijo", "medida": "4:5 · 1080×1350", "objetivo": "Tráfico · visitas a /tutorial-erp", "audiencia": "Equipos con ERP: intereses SAP Business One, CONTPAQi, Aspel, Microsip, Odoo, Alegra; cargos de TI, administración y finanzas.", "titulo": "Tu ERP manda la venta", "hook": "Tu ERP manda la venta. EmiteGo factura.", "arte": {"headline": "Tu ERP manda la venta.\nEmiteGo factura.", "sub": "Y te devuelve folio, UUID, XML y PDF.", "visual": "Rejilla de 11 conectores (CONTPAQi, SAP Business One, Aspel, Microsip, Alegra, Odoo, Siigo, Bind ERP, Administratool, SalesPy, FisApp) alrededor del logo de EmiteGo, con líneas que llegan al centro y una flecha de regreso «UUID ✓»."}, "copy": {"principal": "¿Usas CONTPAQi, SAP Business One, Aspel, Microsip, Odoo o Alegra? 🔌\n\nTu ERP manda la venta por API, webhook o archivo; EmiteGo valida, timbra ante el SAT y te devuelve folio, UUID, XML y PDF para cerrar tu póliza sin capturas manuales.\n\n¿Sistema propio? Te integras por API REST o por archivos, sin desarrollar un conector completo.", "titular": "Conecta tu ERP y factura solo", "descripcion": "11 conectores + API abierta", "cta": "Más información", "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=p09_erp"}, "variante": "Headline B: «¿Tu ERP ya sabe facturar solo? Con EmiteGo, sí.»", "notas": "Usar logotipos de terceros solo con autorización; si no, nombres en tipografía de la marca. Destino sugerido: emitego.com.mx/tutorial-erp."}, {"id": "R10", "fecha": "2026-12-14", "dia": "Lun 14 dic", "semana": 4, "etapa": "Conversión", "formato": "Reel", "medida": "9:16 · 1080×1920 · 30 s", "objetivo": "Clientes potenciales · registro (CompleteRegistration)", "audiencia": "Retargeting caliente: visitantes del sitio 30 días, vieron 75% de cualquier reel, interactuaron con el perfil. Excluir registrados.", "titulo": "Antes vs. después", "hook": "Antes: facturabas en tres lugares.", "escenas": [{"t": "0–4 s", "visual": "Pantalla dividida, lado «ANTES» en gris: tres ventanas apiladas (ERP, portal, Excel), cara de estrés.", "texto": "ANTES 😩 3 lugares", "vo": "Antes: facturabas en tres lugares. El ERP, el portal del PAC… y un Excel para los complementos de pago."}, {"t": "4–12 s", "visual": "Swipe a «AHORA» en azul: una venta se confirma en el ERP y la factura aparece timbrada sola.", "texto": "AHORA 😎 1 venta = 1 factura automática", "vo": "Ahora: la venta se confirma en tu ERP y la factura sale timbrada, enviada y con el folio fiscal de regreso en tu sistema."}, {"t": "12–21 s", "visual": "Cita animada sobre fondo azul con comillas grandes.", "texto": "«Dejamos de capturar todo dos veces.» — Rocío M., gerente de operaciones, Monterrey", "vo": "Así lo cuenta Rocío, gerente de operaciones en Monterrey: dejamos de capturar todo dos veces."}, {"t": "21–28 s", "visual": "End card con precio desde $99 y botón.", "texto": "15 días gratis · sin tarjeta", "vo": "¿Y tú, cuándo empiezas? Pruébalo quince días gratis."}], "copy": {"principal": "«Facturábamos en tres lugares: el ERP, el portal del PAC y Excel para los complementos. Ahora la venta se confirma en el ERP y el CFDI sale timbrado, enviado y con el UUID de regreso.» — Rocío M., distribuidora de autopartes, Monterrey\n\nDeja de capturar todo dos veces. Prueba EmiteGo 15 días gratis, sin tarjeta.", "titular": "Deja de capturar todo dos veces", "descripcion": "Facturas ilimitadas desde $99", "cta": "Registrarte", "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=r10_antes_despues"}, "variante": "Hook B: «Así se veía nuestra facturación antes de EmiteGo…»", "notas": "Testimonio tomado del sitio, citar sin modificar el sentido. Contraste fuerte gris vs azul para el swipe.", "vo_dur": 27.1}, {"id": "C11", "fecha": "2026-12-16", "dia": "Mié 16 dic", "semana": 4, "etapa": "Conversión", "formato": "Carrusel", "medida": "4:5 · 1080×1350 · 6 slides", "objetivo": "Ventas / Clientes potenciales · registro", "audiencia": "Retargeting: visitaron #planes o /register sin completar + interactuaron con C08. Abierto: lookalike 1% de registrados.", "titulo": "¿Cuál plan es para ti?", "hook": "Facturas ilimitadas desde $99 al mes.", "slides": [{"titulo": "Facturas ilimitadas desde $99 al mes.", "texto": "¿Cuál plan es para ti? 👉"}, {"titulo": "Prueba · Gratis 15 días", "texto": "5 timbres · 1 empresa emisora · 2 usuarios · catálogos e importación. Sin tarjeta."}, {"titulo": "Individual · $99/mes", "texto": "Freelancers, arrendadores y profesionistas.\n1 RFC · 2 usuarios · cancelaciones y notas de crédito · complementos de pago · PDF con tu logo."}, {"titulo": "Despacho · $199/mes ⭐ Más elegido", "texto": "Contadores y grupos.\nHasta 10 RFC · 5 usuarios · masiva y recurrente · facturas globales · importación desde Excel."}, {"titulo": "Ilimitado · $399/mes", "texto": "Empresas con ERP y alto volumen.\nRFC y usuarios sin tope · CONTPAQi, SAP y Aspel · API y webhooks · agente de WhatsApp · soporte prioritario."}, {"titulo": "Paga anual y llévate 2 meses gratis", "texto": "Precios en MXN + IVA. Cancelas cuando quieras y tus CFDI timbrados no se afectan.\nEmpieza tu prueba hoy."}], "copy": {"principal": "Planes justos: pagas por lo que usas. 💸\n\nTodos los planes incluyen facturas ilimitadas. Solo cambia cuántos RFC, usuarios y conectores necesitas:\n\n• Individual $99/mes\n• Despacho $199/mes (el más elegido)\n• Ilimitado $399/mes\n\nCon pago anual te ahorras 2 meses. Precios + IVA. Empieza con 15 días gratis, sin tarjeta.", "titular": "Facturas ilimitadas desde $99/mes", "descripcion": "Anual: ahorra 2 meses", "cta": "Registrarte", "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=c11_planes"}, "variante": "Portada B: «¿Cuánto cuesta dejar de capturar dos veces? Menos que una comida.»", "notas": "Cada plan en su color de tarjeta; Despacho resaltado con borde verde. Precios siempre con «+ IVA»."}, {"id": "R12", "fecha": "2026-12-18", "dia": "Vie 18 dic", "semana": 4, "etapa": "Conversión", "formato": "Reel", "medida": "9:16 · 1080×1920 · 30 s", "objetivo": "Ventas / Clientes potenciales · registro", "audiencia": "Todas las audiencias de retargeting (vistas de video 25%+, sitio 60 días, perfil 60 días) + lookalike 1–3% de registrados. Excluir clientes.", "titulo": "Arranca 2027 facturando en automático", "hook": "Se acaba el año… ¿y tú sigues persiguiendo facturas?", "escenas": [{"t": "0–4 s", "visual": "Calendario de diciembre arrancando hojas; montaña de facturas en el escritorio.", "texto": "¿Cerrar el año persiguiendo facturas? 🙅", "vo": "Se acaba el año… ¿y tú sigues persiguiendo facturas?"}, {"t": "4–8 s", "visual": "Transición a «2027» con chispas; escritorio limpio y laptop con EmiteGo.", "texto": "2027 arranca diferente ✨", "vo": "Este dos mil veintisiete arranca diferente."}, {"t": "8–14 s", "visual": "Precio «desde $99/mes + IVA» con «facturas ilimitadas» en sello.", "texto": "Facturas ilimitadas desde $99/mes + IVA", "vo": "Con EmiteGo tienes facturas ilimitadas desde noventa y nueve pesos al mes."}, {"t": "14–21 s", "visual": "Tres íconos que caen: recurrente, Excel masivo, factura global; luego el selector de RFC.", "texto": "Recurrente · masiva · global · multi RFC", "vo": "Facturas recurrentes, masivas desde Excel, factura global… y si eres contador, hasta diez RFC en una sola cuenta."}, {"t": "21–25 s", "visual": "Etiqueta «Anual: ahorra 2 meses» que se pega como sticker.", "texto": "Plan anual = 2 meses gratis 🎁", "vo": "Y con el plan anual, te ahorras dos meses."}, {"t": "25–30 s", "visual": "End card con logo y botón.", "texto": "15 días gratis · sin tarjeta", "vo": "Crea tu cuenta hoy: quince días gratis, sin tarjeta. EmiteGo: tu ERP vende, EmiteGo factura."}], "copy": {"principal": "Cierra 2026 sin perseguir facturas y arranca 2027 en automático. 🎆\n\n✅ Facturas ilimitadas desde $99/mes + IVA\n✅ Recurrentes, masivas desde Excel y globales\n✅ Hasta 10 RFC en el plan Despacho\n✅ Plan anual: ahorra 2 meses\n\nCrea tu cuenta hoy y prueba 15 días gratis, sin tarjeta.", "titular": "Arranca 2027 facturando solo", "descripcion": "Anual: ahorra 2 meses", "cta": "Registrarte", "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=r12_2027"}, "variante": "Hook B: «Tu propósito de año nuevo: no volver a capturar una factura a mano.»", "notas": "Mantener al aire hasta el 31 de diciembre. Si hay presupuesto extra, duplicar en ubicación Stories con el mismo audio.", "vo_dur": 32.5}], "stories": [{"id": "S1", "semana": 1, "fechas": "23 – 29 nov", "titulo": "¿Cuánto tardas en facturar?", "objetivo": "Tráfico · ubicación Stories IG/FB", "medida": "9:16 · 3 frames · 10 s", "frames": [{"texto": "¿Cuánto tardas en hacer UNA factura? ⏱️", "visual": "Fondo azul #193357, encuesta: «+10 min 😩 / −1 min 😎»."}, {"texto": "Con EmiteGo: menos de 60 segundos.", "visual": "Mockup de la bandeja con «CFDI timbrado ✔»."}, {"texto": "15 días gratis · sin tarjeta", "visual": "Logo + flecha animada hacia el botón «Registrarte»."}], "vo": "¿Cuánto tiempo te toma hacer una factura? Con EmiteGo, menos de un minuto. Desliza hacia arriba y pruébalo gratis.", "copy": {"principal": "¿Facturar te toma más de un minuto? Con EmiteGo, no. Prueba 15 días gratis.", "cta": "Registrarte", "utm": "utm_content=s1_cuanto_tardas"}, "vo_dur": 8.1}, {"id": "S2", "semana": 2, "fechas": "30 nov – 6 dic", "titulo": "Checklist exprés", "objetivo": "Clientes potenciales · registro", "medida": "9:16 · 3 frames · 10 s", "frames": [{"texto": "Para facturar HOY necesitas:", "visual": "Lista con casillas que se marcan: RFC · sellos digitales · correo."}, {"texto": "…y 15 minutos.", "visual": "Reloj de arena que se voltea; texto «sin instalar nada»."}, {"texto": "Empieza gratis 👆", "visual": "Botón grande, sticker de enlace a /register."}], "vo": "Tu checklist para facturar hoy mismo: RFC, sellos digitales, un correo… y quince minutos. ¡Desliza y empieza!", "copy": {"principal": "RFC + sellos digitales + un correo = tu primera factura hoy. Empieza gratis.", "cta": "Registrarte", "utm": "utm_content=s2_checklist"}, "vo_dur": 8.0}, {"id": "S3", "semana": 3, "fechas": "7 – 13 dic", "titulo": "Multi RFC de verdad", "objetivo": "Clientes potenciales · registro (contadores)", "medida": "9:16 · 3 frames · 10 s", "frames": [{"texto": "¿Llevas varios RFC? 🧮", "visual": "Pregunta tipo quiz: «¿Cuántos RFC llevas? 1–3 / 4–10 / +10»."}, {"texto": "Cambia de empresa con un clic.", "visual": "Grabación del selector de RFC en la barra superior."}, {"texto": "Plan Despacho · hasta 10 RFC · $199/mes + IVA", "visual": "Tarjeta del plan + botón."}], "vo": "¿Llevas varios RFC? Cámbiate de empresa con un clic, sin cerrar sesión. EmiteGo: multi RFC de verdad.", "copy": {"principal": "Varios RFC, una sola cuenta. Plan Despacho desde $199/mes + IVA.", "cta": "Registrarte", "utm": "utm_content=s3_multirfc"}, "vo_dur": 8.5}, {"id": "S4", "semana": 4, "fechas": "14 – 31 dic", "titulo": "Cuenta regresiva 2027", "objetivo": "Ventas / registro · retargeting", "medida": "9:16 · 3 frames · 10 s", "frames": [{"texto": "Faltan pocos días para 2027 🎆", "visual": "Sticker de cuenta regresiva al 1 de enero."}, {"texto": "Empieza el año facturando en automático.", "visual": "Flujo ERP ➜ EmiteGo ➜ cliente con checks."}, {"texto": "15 días gratis · anual: 2 meses de regalo", "visual": "Botón + precio desde $99."}], "vo": "Últimos días del año: arranca dos mil veintisiete facturando en automático. Quince días gratis, sin tarjeta. ¡Desliza!", "copy": {"principal": "Arranca 2027 facturando en automático. 15 días gratis, sin tarjeta.", "cta": "Registrarte", "utm": "utm_content=s4_2027"}, "vo_dur": 8.2}]}</script>
+<script>
+const D = JSON.parse(document.getElementById('data').textContent);
+const BASE = D.url;
+const LOGO = '<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#fff" fill-opacity=".14"/><path d="M15.5 10.5h12.8l5.2 5.2v19.3a2.5 2.5 0 0 1-2.5 2.5H15.5a2.5 2.5 0 0 1-2.5-2.5V13a2.5 2.5 0 0 1 2.5-2.5z" fill="#fff"/><path d="M18.6 22.2l12.6 3.4-9.4 2.5-1.1 4.6-1.9-4-3.3.9 3.1-7.4z" fill="#193357"/></svg>';
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const kind = f => ({'Reel':'reel','Carrusel':'carrusel','Post fijo':'fijo'}[f] || 'story');
+const tag = f => `<span class="tag ${kind(f)}"><i></i>${esc(f)}</span>`;
+const fullUrl = u => u.startsWith('utm_source') ? `${BASE}?${u}` : `${BASE}?utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&${u}`;
+const fmt = s => { s = Math.max(0, s || 0); return `${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`; };
+
+const STAGES = [
+  {wk:'Semana 1', t:'Descubrimiento', p:'Presentar el problema (capturar dos veces) y la promesa: tu ERP vende, EmiteGo factura.'},
+  {wk:'Semana 2', t:'Cómo funciona', p:'Tutorial en 3 pasos, checklist para empezar y una factura real en menos de 60 segundos.'},
+  {wk:'Semana 3', t:'Diferenciadores', p:'Factura por WhatsApp, multi RFC para contadores y conectores con 11 ERPs.'},
+  {wk:'Semana 4', t:'Conversión', p:'Antes y después con testimonio, planes desde $99 y cierre de año con plan anual.'}
+];
+document.getElementById('funnel').innerHTML = STAGES.map(s => `<div class="stage"><span class="wk">${s.wk}</span><h3>${s.t}</h3><p>${s.p}</p></div>`).join('');
+
+const SPLIT = [['S1 · Descubrimiento',20],['S2 · Cómo funciona',25],['S3 · Diferenciadores',30],['S4 · Conversión',25]];
+document.getElementById('split').innerHTML = SPLIT.map(([l,v]) => `<div class="row"><span>${l}</span><span class="track"><i style="width:${v/30*100}%"></i></span><span class="pct">${v}%</span></div>`).join('');
+
+// Calendario
+const weeks = [1,2,3,4];
+const wkRange = {1:'23 – 27 nov',2:'30 nov – 4 dic',3:'7 – 11 dic',4:'14 – 18 dic'};
+let cal = '<div class="h"></div><div class="h">Lunes</div><div class="h">Miércoles</div><div class="h">Viernes</div><div class="h">Stories (toda la semana)</div>';
+for (const w of weeks) {
+  cal += `<div class="wkcell"><b>Semana ${w}</b><span>${wkRange[w]}</span></div>`;
+  for (const p of D.piezas.filter(p => p.semana === w))
+    cal += `<a class="slot" href="#${p.id}"><span class="d">${esc(p.dia)} · ${p.id}</span>${tag(p.formato)}<span class="t">${esc(p.titulo)}</span></a>`;
+  const s = D.stories.find(s => s.semana === w);
+  cal += `<a class="slot st" href="#${s.id}"><span class="d">${esc(s.fechas)} · ${s.id}</span>${tag('Stories')}<span class="t">${esc(s.titulo)}</span></a>`;
+}
+document.getElementById('cal').innerHTML = cal;
+
+// Audio
+const player = (id, dur) => `<div class="play" data-src="vo/${id}.mp3"><button type="button" aria-label="Reproducir voz en off de ${id}"><svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><path d="M3 1.5v11l9-5.5z"/></svg></button><span class="lbl">Voz en off</span><span class="bar"><i></i></span><span class="tm mono">0:00 / ${fmt(dur)}</span></div>`;
+
+const copyRow = (k, v, opts = {}) => {
+  const n = String(v).length;
+  const lim = opts.lim ? ` <span class="cnt">${n}/${opts.lim} car.</span>` : '';
+  return `<div class="copy-row"><span class="k">${k}</span><span class="v${opts.cls ? ' ' + opts.cls : ''}">${opts.html || esc(v)}${lim}</span>${opts.nocopy ? '<span></span>' : `<button class="btn-copy" type="button" data-copy="${esc(v)}">Copiar</button>`}</div>`;
+};
+const copyBlock = c => `<div class="copy">
+  ${copyRow('Texto principal', c.principal)}
+  ${c.titular ? copyRow('Titular', c.titular, {lim:40}) : ''}
+  ${c.descripcion ? copyRow('Descripción', c.descripcion, {lim:30}) : ''}
+  ${copyRow('Botón', c.cta, {html:`<span class="cta-chip">${esc(c.cta)}</span>`, nocopy:true})}
+  ${copyRow('URL', c.cta.includes('WhatsApp') ? 'https://wa.me/525527177550' : fullUrl(c.utm), {cls:'url'})}
+</div>`;
+
+function mockup(p) {
+  if (p.formato === 'Reel') {
+    const e0 = p.escenas[0];
+    return `<div class="phone"><div class="ph-top">${LOGO}EmiteGo<span class="sp">Publicidad</span></div><div class="hook">${esc(e0.texto)}</div><div><div class="cap">${esc(e0.vo)}</div><div class="ph-bot"><div class="ad-cta">${esc(p.copy.cta)}</div></div></div></div>`;
+  }
+  if (p.formato === 'Carrusel') {
+    return `<div class="strip" tabindex="0" aria-label="Slides del carrusel">${p.slides.map((s, i) => `<div class="post${i % 2 ? ' alt' : ''}"><span class="n">${i + 1}/${p.slides.length}</span><div class="big">${esc(s.titulo)}</div><div class="sub">${esc(s.texto)}</div></div>`).join('')}</div>`;
+  }
+  if (p.formato === 'Post fijo') {
+    return `<div class="post"><span class="ring" aria-hidden="true"></span><div class="ph-top" style="display:flex;gap:8px;align-items:center;font:700 13px var(--display)"><span style="width:24px;height:24px;display:block">${LOGO}</span>EmiteGo</div><div class="big">${esc(p.arte.headline)}</div><div><div class="sub">${esc(p.arte.sub)}</div><div class="badge">15 días gratis · sin tarjeta</div></div></div>`;
+  }
+}
+
+function pieceHTML(p) {
+  const k = kind(p.formato);
+  let detail = '';
+  if (p.escenas) detail = `<div class="block"><h4>Guion escena por escena</h4><div class="scenes"><table><thead><tr><th>Tiempo</th><th>Visual</th><th>Texto en pantalla</th><th>Voz en off</th></tr></thead><tbody>${p.escenas.map(e => `<tr><td>${esc(e.t)}</td><td>${esc(e.visual)}</td><td class="os">${esc(e.texto)}</td><td class="vo">${esc(e.vo)}</td></tr>`).join('')}</tbody></table></div><div class="copy">${copyRow('Guion de voz', p.escenas.map(e => e.vo).join(' '))}</div></div>`;
+  if (p.slides) detail = `<div class="block"><h4>Slides</h4><ul class="slides">${p.slides.map(s => `<li><span><b>${esc(s.titulo)}</b><span>${esc(s.texto)}</span></span></li>`).join('')}</ul></div>`;
+  if (p.arte) detail = `<div class="block"><h4>Arte</h4><div class="copy">${copyRow('Headline', p.arte.headline)}${copyRow('Subtexto', p.arte.sub)}${copyRow('Visual', p.arte.visual, {nocopy:true})}</div></div>`;
+  return `<article class="piece" id="${p.id}" data-k="${k}">
+    <div class="piece-head"><span class="id">${p.id}</span>${tag(p.formato)}<h3>${esc(p.titulo)}</h3><span class="when">${esc(p.dia)} · ${esc(p.etapa)}</span></div>
+    <div class="piece-body">
+      <div class="mock-col">${mockup(p)}${p.vo_dur ? player(p.id, p.vo_dur) : ''}</div>
+      <div style="min-width:0">
+        <dl class="meta">
+          <div><dt>Medida</dt><dd>${esc(p.medida)}</dd></div>
+          <div><dt>Objetivo de campaña</dt><dd>${esc(p.objetivo)}</dd></div>
+          <div class="wide"><dt>Audiencia</dt><dd>${esc(p.audiencia)}</dd></div>
+        </dl>
+        <div class="block" style="margin-top:0"><h4>Copy para Ads</h4>${copyBlock(p.copy)}</div>
+        ${detail}
+        <div class="block"><div class="note"><b>Variante A/B.</b> ${esc(p.variante.replace(/^[^:]+:\s*/, ''))}</div><div class="note"><b>Producción.</b> ${esc(p.notas)}</div></div>
+      </div>
+    </div>
+  </article>`;
+}
+
+function storyHTML(s) {
+  return `<article class="piece" id="${s.id}" data-k="story">
+    <div class="piece-head"><span class="id">${s.id}</span>${tag('Stories')}<h3>${esc(s.titulo)}</h3><span class="when">${esc(s.fechas)} · semana ${s.semana}</span></div>
+    <div class="piece-body">
+      <div class="mock-col"><div class="stories">${s.frames.map(f => `<div class="phone"><div class="ph-top" style="font-size:10px">${f === s.frames[0] ? 'EmiteGo' : ''}</div><div class="hook">${esc(f.texto)}</div></div>`).join('')}</div>${player(s.id, s.vo_dur)}</div>
+      <div style="min-width:0">
+        <dl class="meta">
+          <div><dt>Medida</dt><dd>${esc(s.medida)}</dd></div>
+          <div><dt>Objetivo de campaña</dt><dd>${esc(s.objetivo)}</dd></div>
+        </dl>
+        <div class="block" style="margin-top:0"><h4>Frames</h4><div class="scenes"><table><thead><tr><th>Frame</th><th>Texto en pantalla</th><th>Visual</th></tr></thead><tbody>${s.frames.map((f, i) => `<tr><td>${i + 1}</td><td class="os">${esc(f.texto)}</td><td>${esc(f.visual)}</td></tr>`).join('')}</tbody></table></div></div>
+        <div class="block"><h4>Copy y voz</h4><div class="copy">${copyRow('Voz en off', s.vo)}${copyRow('Texto principal', s.copy.principal)}${copyRow('Botón', s.copy.cta, {html:`<span class="cta-chip">${esc(s.copy.cta)}</span>`, nocopy:true})}${copyRow('URL', fullUrl(s.copy.utm), {cls:'url'})}</div></div>
+      </div>
+    </div>
+  </article>`;
+}
+
+const all = [];
+for (const w of weeks) {
+  D.piezas.filter(p => p.semana === w).forEach(p => all.push(pieceHTML(p)));
+  all.push(storyHTML(D.stories.find(s => s.semana === w)));
+}
+document.getElementById('pieces').innerHTML = all.join('');
+
+// Filtros
+const F = [['todo','Todo'],['reel','Reels'],['carrusel','Carruseles'],['fijo','Posts fijos'],['story','Stories']];
+const fEl = document.getElementById('filters');
+fEl.innerHTML = F.map(([k, l], i) => `<button type="button" id="f-${k}" data-f="${k}" aria-pressed="${i === 0}">${l}</button>`).join('');
+fEl.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  fEl.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  document.querySelectorAll('.piece').forEach(a => a.hidden = !(b.dataset.f === 'todo' || a.dataset.k === b.dataset.f));
+});
+document.querySelectorAll('.slot').forEach(a => a.addEventListener('click', () => {
+  fEl.querySelector('[data-f="todo"]').click();
+}));
+
+// Copiar
+document.addEventListener('click', async e => {
+  const b = e.target.closest('.btn-copy'); if (!b) return;
+  const txt = b.dataset.copy;
+  try { await navigator.clipboard.writeText(txt); b.textContent = 'Copiado'; }
+  catch { const r = document.createRange(); r.selectNodeContents(b.previousElementSibling); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Seleccionado'; }
+  setTimeout(() => b.textContent = 'Copiar', 1600);
+});
+
+// Audio
+let cur = null;
+document.querySelectorAll('.play').forEach(el => {
+  const a = new Audio(); a.preload = 'none';
+  const btn = el.querySelector('button'), bar = el.querySelector('.bar i'), tm = el.querySelector('.tm');
+  const icon = playing => btn.innerHTML = playing ? '<svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><rect x="2.5" y="1.5" width="3" height="11"/><rect x="8.5" y="1.5" width="3" height="11"/></svg>' : '<svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><path d="M3 1.5v11l9-5.5z"/></svg>';
+  btn.addEventListener('click', () => {
+    if (!a.src) a.src = el.dataset.src;
+    if (a.paused) { if (cur && cur !== a) cur.pause(); cur = a; a.play().catch(() => {}); } else a.pause();
+  });
+  a.addEventListener('play', () => icon(true));
+  a.addEventListener('pause', () => icon(false));
+  a.addEventListener('ended', () => { icon(false); bar.style.width = '0'; });
+  a.addEventListener('timeupdate', () => { if (a.duration) { bar.style.width = (a.currentTime / a.duration * 100) + '%'; tm.textContent = `${fmt(a.currentTime)} / ${fmt(a.duration)}`; } });
+});
+</script>

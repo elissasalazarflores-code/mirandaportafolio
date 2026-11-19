@@ -1,0 +1,427 @@
+<title>Parrilla EmiteGo Diciembre</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: hoja de planeación de pauta. Cabecera de marca, calendario 4×(L/M/V + stories), luego una ficha por pieza: maqueta a la izquierda, guion y copys a la derecha. */
+:root{
+  --navy:#193357; --navy-2:#24467a; --green:#059669; --green-soft:#e3f4ee;
+  --bg:#f5f7fb; --surface:#ffffff; --line:#dfe5ee; --ink:#0f172a; --ink-2:#475569; --ink-3:#64748b;
+  --chip:#eef2f8; --on-navy:#ffffff; --muted-on-navy:#b9c6da;
+  --display:"Plus Jakarta Sans",ui-sans-serif,system-ui,sans-serif;
+  --body:Inter,ui-sans-serif,system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b1322; --surface:#111c30; --line:#22324d; --ink:#e7edf6; --ink-2:#b2bfd2; --ink-3:#8b9ab1;
+  --chip:#1a2741; --green-soft:#0f2f28; --navy:#1d3b66; --navy-2:#2b4f86; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0b1322; --surface:#111c30; --line:#22324d; --ink:#e7edf6; --ink-2:#b2bfd2; --ink-3:#8b9ab1;
+  --chip:#1a2741; --green-soft:#0f2f28; --navy:#1d3b66; --navy-2:#2b4f86; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--body);margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+.eyebrow{font:600 11.5px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* Cabecera */
+header.top{background:var(--navy);color:var(--on-navy)}
+header.top .wrap{padding-block:36px 30px;display:grid;gap:22px}
+.brand{display:flex;align-items:center;gap:12px;font:800 20px var(--display)}
+.brand svg{width:40px;height:40px;flex:none}
+header.top h1{font-size:clamp(28px,4.4vw,44px);font-weight:800;max-width:22ch;line-height:1.08}
+header.top p{color:var(--muted-on-navy);max-width:68ch;margin:0}
+.facts{display:flex;flex-wrap:wrap;gap:10px}
+.fact{border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--on-navy)}
+.fact b{font-weight:600}
+
+main .wrap{padding-block:28px 64px;display:grid;gap:44px}
+main .wrap>section{min-width:0}
+section>h2{font-size:22px;margin-bottom:6px}
+section>.lede{color:var(--ink-2);margin:0 0 18px;max-width:72ch}
+
+/* Embudo */
+.funnel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.stage{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:6px;align-content:start}
+.stage .wk{font:600 12px var(--mono);color:var(--green)}
+.stage h3{font-size:16px}
+.stage p{margin:0;color:var(--ink-2);font-size:13.5px}
+.mix{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+
+/* Calendario */
+.cal-scroll{overflow-x:auto}
+.cal{display:grid;grid-template-columns:110px repeat(3,minmax(170px,1fr)) minmax(170px,1fr);gap:8px;min-width:820px}
+.cal .h{font:600 12px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:4px 2px}
+.cal .wkcell{display:grid;align-content:center;gap:2px;padding:8px 4px}
+.cal .wkcell b{font:700 15px var(--display)}
+.cal .wkcell span{font-size:12.5px;color:var(--ink-3)}
+.slot{display:grid;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}
+.slot:hover,.slot:focus-visible{border-color:var(--green);transform:translateY(-1px);outline:none}
+.slot .d{font:500 12px var(--mono);color:var(--ink-3)}
+.slot .t{font:700 14px/1.3 var(--display)}
+.slot.st{background:var(--chip);border-style:dashed}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 11.5px var(--body);padding:3px 9px;border-radius:999px;background:var(--chip);color:var(--ink-2);width:max-content}
+.tag i{width:7px;height:7px;border-radius:50%;background:currentColor;display:block}
+.tag.reel{color:#b4236b;background:color-mix(in srgb,#b4236b 12%,transparent)}
+.tag.carrusel{color:#2563eb;background:color-mix(in srgb,#2563eb 12%,transparent)}
+.tag.fijo{color:#b45309;background:color-mix(in srgb,#b45309 13%,transparent)}
+.tag.story{color:var(--green);background:color-mix(in srgb,var(--green) 13%,transparent)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tag.reel{color:#f472b6}:root:not([data-theme="light"]) .tag.carrusel{color:#7aa7ff}:root:not([data-theme="light"]) .tag.fijo{color:#f5b04a}:root:not([data-theme="light"]) .tag.story{color:#34d399}}
+:root[data-theme="dark"] .tag.reel{color:#f472b6}:root[data-theme="dark"] .tag.carrusel{color:#7aa7ff}:root[data-theme="dark"] .tag.fijo{color:#f5b04a}:root[data-theme="dark"] .tag.story{color:#34d399}
+
+/* Filtros */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.filters button{font:600 13px var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink-2);padding:7px 14px;border-radius:999px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--on-navy)}
+.filters button:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+
+/* Fichas */
+.pieces{display:grid;gap:22px}
+.piece{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;scroll-margin-top:16px}
+.piece-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:16px 20px;border-bottom:1px solid var(--line)}
+.piece-head .id{font:700 13px var(--mono);color:var(--on-navy);background:var(--navy);padding:4px 8px;border-radius:6px}
+.piece-head h3{font-size:19px;flex:1 1 260px}
+.piece-head .when{font:500 13px var(--mono);color:var(--ink-3)}
+.piece-body{display:grid;grid-template-columns:minmax(0,330px) minmax(0,1fr);gap:24px;padding:20px}
+.meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;margin-bottom:18px}
+.meta div{min-width:0}
+.meta dt{font:600 11px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:2px}
+.meta dd{margin:0;font-size:13.5px;color:var(--ink)}
+.meta .wide{grid-column:1/-1}
+.block{display:grid;gap:10px;margin-top:18px}
+.block>h4{font-size:14px;display:flex;align-items:center;gap:8px}
+
+/* Guion */
+.scenes{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+.scenes table{border-collapse:collapse;width:100%;min-width:560px;font-size:13px}
+.scenes th{text-align:left;font:600 11px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);background:var(--chip);padding:8px 10px}
+.scenes td{padding:9px 10px;border-top:1px solid var(--line);vertical-align:top}
+.scenes td:first-child{font:500 12px var(--mono);white-space:nowrap;color:var(--ink-3)}
+.scenes td.vo{color:var(--ink);font-style:italic}
+.scenes td.os{font-weight:600}
+
+.slides{display:grid;gap:8px;counter-reset:s;margin:0;padding:0}
+.slides li{list-style:none;display:grid;grid-template-columns:30px 1fr;gap:10px;font-size:13.5px}
+.slides li::before{counter-increment:s;content:counter(s);font:600 12px var(--mono);color:var(--ink-3);background:var(--chip);border-radius:6px;height:24px;display:grid;place-items:center}
+.slides b{display:block;font-family:var(--display)}
+.slides span{white-space:pre-line;color:var(--ink-2)}
+.slides ul{margin:0;padding:0}
+
+/* Copys */
+.copy{border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.copy-row{display:grid;grid-template-columns:120px minmax(0,1fr) auto;gap:12px;padding:10px 12px;border-top:1px solid var(--line);align-items:start}
+.copy-row:first-child{border-top:0}
+.copy-row .k{font:600 11px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding-top:3px}
+.copy-row .v{white-space:pre-line;font-size:14px;min-width:0;overflow-wrap:anywhere}
+.copy-row .v.url{font:12px var(--mono);color:var(--ink-2)}
+.copy-row .cnt{font:11px var(--mono);color:var(--ink-3);display:block;margin-top:4px}
+.btn-copy{font:600 12px var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink-2);border-radius:7px;padding:5px 10px;cursor:pointer;white-space:nowrap}
+.btn-copy:hover{border-color:var(--green);color:var(--green)}
+.btn-copy:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.cta-chip{display:inline-block;background:var(--navy);color:var(--on-navy);font:600 13px var(--body);padding:5px 12px;border-radius:6px}
+.note{font-size:13px;color:var(--ink-2);background:var(--chip);border-radius:10px;padding:10px 12px}
+.note b{color:var(--ink)}
+
+/* Maquetas */
+.mock-col{display:grid;gap:12px;align-content:start}
+.phone{position:relative;aspect-ratio:9/16;max-width:100%;width:100%;border-radius:22px;overflow:hidden;background:linear-gradient(165deg,var(--navy-2),#0f2140 70%);color:#fff;display:grid;grid-template-rows:auto 1fr auto;padding:18px 16px;box-shadow:0 10px 30px rgba(15,23,42,.18)}
+.phone .ph-top{display:flex;align-items:center;gap:8px;font:700 13px var(--display)}
+.phone .ph-top svg{width:24px;height:24px}
+.phone .ph-top .sp{font:500 11px var(--body);opacity:.7;margin-left:auto}
+.phone .hook{align-self:center;font:800 clamp(22px,2.6vw,28px)/1.12 var(--display);text-wrap:balance}
+.phone .cap{justify-self:center;background:rgba(0,0,0,.45);font:600 13px var(--body);padding:5px 10px;border-radius:6px;text-align:center;min-height:2.6em;display:grid;place-items:center}
+.phone .ph-bot{display:grid;gap:10px;margin-top:12px}
+.phone .ad-cta{background:#fff;color:#0f2140;font:700 13px var(--body);text-align:center;padding:9px;border-radius:8px}
+.phone .spons{font:500 11px var(--body);opacity:.7}
+.post{aspect-ratio:4/5;max-width:100%;width:100%;border-radius:14px;overflow:hidden;background:var(--navy);color:#fff;display:grid;grid-template-rows:auto 1fr auto;padding:22px;position:relative}
+.post .big{align-self:center;font:800 clamp(30px,4vw,46px)/1.02 var(--display);white-space:pre-line;text-wrap:balance}
+.post .sub{font-size:14px;color:#cfe0f5;max-width:30ch}
+.post .badge{justify-self:start;background:var(--green);color:#fff;font:700 12px var(--body);padding:6px 10px;border-radius:6px;margin-top:14px}
+.post .ring{position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;border:14px solid rgba(5,150,105,.55);border-right-color:transparent;transform:rotate(-30deg)}
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:78%;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+.strip .post{scroll-snap-align:start;padding:18px}
+.strip .post .big{font-size:clamp(20px,2.2vw,24px)}
+.strip .post .sub{white-space:pre-line;font-size:12.5px}
+.strip .post.alt{background:#eef2f8;color:#0f2140}
+.strip .post.alt .sub{color:#334155}
+.strip .post .n{font:600 11px var(--mono);opacity:.7}
+.stories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.stories .phone{border-radius:14px;padding:10px;grid-template-rows:auto 1fr;box-shadow:none}
+.stories .phone .hook{font-size:14px;line-height:1.2}
+.stories .phone .vis{font-size:10.5px;opacity:.75;align-self:end}
+
+.play{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--surface)}
+.play button{width:34px;height:34px;border-radius:50%;border:0;background:var(--green);color:#fff;display:grid;place-items:center;cursor:pointer;flex:none}
+.play button:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+.play .bar{flex:1;height:5px;background:var(--chip);border-radius:3px;overflow:hidden}
+.play .bar i{display:block;height:100%;width:0;background:var(--green)}
+.play .tm{font:500 12px var(--mono);color:var(--ink-3);min-width:76px;text-align:right}
+.play .lbl{font:600 12px var(--body);color:var(--ink-2)}
+
+/* Voz y pauta */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:grid;gap:10px;align-content:start}
+.panel h3{font-size:16px}
+.panel ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:14px;display:grid;gap:6px}
+.panel code{font:12.5px var(--mono);background:var(--chip);padding:2px 6px;border-radius:5px;overflow-wrap:anywhere}
+.split{display:grid;gap:8px}
+.split .row{display:grid;grid-template-columns:150px 1fr 44px;gap:10px;align-items:center;font-size:13.5px}
+.split .track{height:10px;background:var(--chip);border-radius:5px;overflow:hidden}
+.split .track i{display:block;height:100%;background:var(--navy-2)}
+.split .pct{font:600 12.5px var(--mono);text-align:right}
+
+footer{color:var(--ink-3);font-size:12.5px;padding-block:0 40px}
+
+@media (max-width:860px){
+  .piece-body{grid-template-columns:1fr}
+  .mock-col{max-width:340px}
+  .funnel{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .two{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .funnel{grid-template-columns:1fr}
+  .meta{grid-template-columns:1fr}
+  .copy-row{grid-template-columns:1fr auto}
+  .copy-row .k{grid-column:1/-1}
+  .split .row{grid-template-columns:110px 1fr 40px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#fff" fill-opacity=".12"/><path d="M15.5 10.5h12.8l5.2 5.2v19.3a2.5 2.5 0 0 1-2.5 2.5H15.5a2.5 2.5 0 0 1-2.5-2.5V13a2.5 2.5 0 0 1 2.5-2.5z" fill="#fff"/><path d="M28.3 10.5l5.2 5.2h-5.2z" fill="#AEBBCE"/><path d="M18.6 22.2l12.6 3.4-9.4 2.5-1.1 4.6-1.9-4-3.3.9 3.1-7.4z" fill="#193357"/></svg>EmiteGo</div>
+    <div class="eyebrow" style="color:var(--muted-on-navy)">Parrilla de anuncios · Meta Ads (Instagram y Facebook)</div>
+    <h1>Tu ERP vende. EmiteGo factura. Un mes de anuncios, del primer clic al registro.</h1>
+    <p>12 piezas (6 reels, 4 carruseles, 2 posts fijos) publicadas lunes, miércoles y viernes, más 4 sets de stories que corren toda la semana. Cada pieza trae objetivo de campaña, audiencia, guion, copys con los límites de Meta, URL con UTM y voz en off.</p>
+    <div class="facts">
+      <span class="fact"><b>23 nov – 18 dic 2026</b></span>
+      <span class="fact">Lun · Mié · Vie</span>
+      <span class="fact">10 voces en off · <b>3 min 30 s</b></span>
+      <span class="fact">Destino: emitego.com.mx/register</span>
+    </div>
+  </div>
+</header>
+
+<main><div class="wrap">
+
+<section id="estrategia">
+  <h2>La ruta del mes</h2>
+  <p class="lede">Cada semana empuja un paso del embudo. Las primeras piezas buscan alcance barato; desde la semana 2 cada reel alimenta audiencias de retargeting que las piezas siguientes convierten.</p>
+  <div class="funnel" id="funnel"></div>
+  <div class="mix">
+    <span class="tag reel"><i></i>Reel × 6</span>
+    <span class="tag carrusel"><i></i>Carrusel × 4</span>
+    <span class="tag fijo"><i></i>Post fijo × 2</span>
+    <span class="tag story"><i></i>Stories × 4 sets</span>
+  </div>
+</section>
+
+<section id="calendario">
+  <h2>Calendario</h2>
+  <p class="lede">Toca una pieza para ir a su ficha.</p>
+  <div class="cal-scroll"><div class="cal" id="cal"></div></div>
+</section>
+
+<section id="piezas">
+  <h2>Fichas de cada pieza</h2>
+  <p class="lede">Los copys ya están escritos para Ads: el texto principal pone el gancho en los primeros 125 caracteres, el titular cabe en 40 y la descripción en 30.</p>
+  <div class="filters" role="group" aria-label="Filtrar por formato" id="filters"></div>
+  <div class="pieces" id="pieces"></div>
+</section>
+
+<section id="voz">
+  <h2>Voz en off y producción</h2>
+  <div class="two">
+    <div class="panel">
+      <h3>Voz: Liam · ElevenLabs</h3>
+      <ul>
+        <li>Masculina, joven y animada, de estilo creador de redes. Modelo <code>eleven_multilingual_v2</code> en español, velocidad 1.08 y estilo 0.45 para darle energía.</li>
+        <li>Cada audio se revisó con transcripción automática: la marca se pronuncia «Emite Go», y RFC, SAT, ERP e IVA se entienden claro.</li>
+        <li>Tu cuenta de ElevenLabs está en plan gratuito, que solo permite voces predeterminadas por API. Las voces mexicanas nativas que ya tienes guardadas (<b>Beto Viral</b>, acento mexicano neutro, e <b>Isaac</b>, joven y amigable) piden plan Starter o superior. Con el plan activo, el mismo guion se vuelve a generar con un comando: <code>python3 emitego/vo.py T0etfMyJ0xd14aP2WsOi</code></li>
+        <li>Junto a cada MP3 hay un archivo .srt con los subtítulos sincronizados, listo para CapCut o Premiere (carpeta <code>emitego/vo</code> del repositorio).</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Reglas para que funcione como anuncio</h3>
+      <ul>
+        <li>Subtítulos quemados en todos los reels: la mayoría los ve sin sonido.</li>
+        <li>El gancho visual y de texto aparece antes del segundo 1.</li>
+        <li>Stories: deja libre el 14% superior y el 20% inferior para la interfaz y el botón.</li>
+        <li>Música animada a −18 dB debajo de la voz; sin canciones con derechos en anuncios.</li>
+        <li>Precios siempre con «+ IVA». Testimonios tal como aparecen en el sitio.</li>
+        <li>Prueba A/B del gancho: cada pieza trae una variante B. Corre ambas 3 días y deja la de menor costo por resultado.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Reparto sugerido del presupuesto</h3>
+      <div class="split" id="split"></div>
+      <p style="margin:0;font-size:13px;color:var(--ink-3)">La semana 3 lleva más peso porque ahí va la pieza estrella (factura por WhatsApp) y ya hay audiencias de retargeting llenas.</p>
+    </div>
+    <div class="panel">
+      <h3>Qué medir</h3>
+      <ul>
+        <li>Reels de descubrimiento: costo por ThruPlay y % de reproducción al 50%.</li>
+        <li>Tráfico: CTR del enlace mayor a 1% y costo por visita a la página de destino.</li>
+        <li>Conversión: costo por registro (evento CompleteRegistration en /register) y registros que timbran su primer CFDI.</li>
+        <li>WhatsApp: conversaciones iniciadas y costo por conversación.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</div></main>
+<footer><div class="wrap">Contenido basado en emitego.com.mx (planes, guía de acceso, demo y testimonios publicados). Datos de los ejemplos: ficticios, tomados del demo oficial.</div></footer>
+
+<script id="data" type="application/json">__DATA__</script>
+<script>
+const D = JSON.parse(document.getElementById('data').textContent);
+const BASE = D.url;
+const LOGO = '<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#fff" fill-opacity=".14"/><path d="M15.5 10.5h12.8l5.2 5.2v19.3a2.5 2.5 0 0 1-2.5 2.5H15.5a2.5 2.5 0 0 1-2.5-2.5V13a2.5 2.5 0 0 1 2.5-2.5z" fill="#fff"/><path d="M18.6 22.2l12.6 3.4-9.4 2.5-1.1 4.6-1.9-4-3.3.9 3.1-7.4z" fill="#193357"/></svg>';
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const kind = f => ({'Reel':'reel','Carrusel':'carrusel','Post fijo':'fijo'}[f] || 'story');
+const tag = f => `<span class="tag ${kind(f)}"><i></i>${esc(f)}</span>`;
+const fullUrl = u => u.startsWith('utm_source') ? `${BASE}?${u}` : `${BASE}?utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&${u}`;
+const fmt = s => { s = Math.max(0, s || 0); return `${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`; };
+
+const STAGES = [
+  {wk:'Semana 1', t:'Descubrimiento', p:'Presentar el problema (capturar dos veces) y la promesa: tu ERP vende, EmiteGo factura.'},
+  {wk:'Semana 2', t:'Cómo funciona', p:'Tutorial en 3 pasos, checklist para empezar y una factura real en menos de 60 segundos.'},
+  {wk:'Semana 3', t:'Diferenciadores', p:'Factura por WhatsApp, multi RFC para contadores y conectores con 11 ERPs.'},
+  {wk:'Semana 4', t:'Conversión', p:'Antes y después con testimonio, planes desde $99 y cierre de año con plan anual.'}
+];
+document.getElementById('funnel').innerHTML = STAGES.map(s => `<div class="stage"><span class="wk">${s.wk}</span><h3>${s.t}</h3><p>${s.p}</p></div>`).join('');
+
+const SPLIT = [['S1 · Descubrimiento',20],['S2 · Cómo funciona',25],['S3 · Diferenciadores',30],['S4 · Conversión',25]];
+document.getElementById('split').innerHTML = SPLIT.map(([l,v]) => `<div class="row"><span>${l}</span><span class="track"><i style="width:${v/30*100}%"></i></span><span class="pct">${v}%</span></div>`).join('');
+
+// Calendario
+const weeks = [1,2,3,4];
+const wkRange = {1:'23 – 27 nov',2:'30 nov – 4 dic',3:'7 – 11 dic',4:'14 – 18 dic'};
+let cal = '<div class="h"></div><div class="h">Lunes</div><div class="h">Miércoles</div><div class="h">Viernes</div><div class="h">Stories (toda la semana)</div>';
+for (const w of weeks) {
+  cal += `<div class="wkcell"><b>Semana ${w}</b><span>${wkRange[w]}</span></div>`;
+  for (const p of D.piezas.filter(p => p.semana === w))
+    cal += `<a class="slot" href="#${p.id}"><span class="d">${esc(p.dia)} · ${p.id}</span>${tag(p.formato)}<span class="t">${esc(p.titulo)}</span></a>`;
+  const s = D.stories.find(s => s.semana === w);
+  cal += `<a class="slot st" href="#${s.id}"><span class="d">${esc(s.fechas)} · ${s.id}</span>${tag('Stories')}<span class="t">${esc(s.titulo)}</span></a>`;
+}
+document.getElementById('cal').innerHTML = cal;
+
+// Audio
+const player = (id, dur) => `<div class="play" data-src="vo/${id}.mp3"><button type="button" aria-label="Reproducir voz en off de ${id}"><svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><path d="M3 1.5v11l9-5.5z"/></svg></button><span class="lbl">Voz en off</span><span class="bar"><i></i></span><span class="tm mono">0:00 / ${fmt(dur)}</span></div>`;
+
+const copyRow = (k, v, opts = {}) => {
+  const n = String(v).length;
+  const lim = opts.lim ? ` <span class="cnt">${n}/${opts.lim} car.</span>` : '';
+  return `<div class="copy-row"><span class="k">${k}</span><span class="v${opts.cls ? ' ' + opts.cls : ''}">${opts.html || esc(v)}${lim}</span>${opts.nocopy ? '<span></span>' : `<button class="btn-copy" type="button" data-copy="${esc(v)}">Copiar</button>`}</div>`;
+};
+const copyBlock = c => `<div class="copy">
+  ${copyRow('Texto principal', c.principal)}
+  ${c.titular ? copyRow('Titular', c.titular, {lim:40}) : ''}
+  ${c.descripcion ? copyRow('Descripción', c.descripcion, {lim:30}) : ''}
+  ${copyRow('Botón', c.cta, {html:`<span class="cta-chip">${esc(c.cta)}</span>`, nocopy:true})}
+  ${copyRow('URL', c.cta.includes('WhatsApp') ? 'https://wa.me/525527177550' : fullUrl(c.utm), {cls:'url'})}
+</div>`;
+
+function mockup(p) {
+  if (p.formato === 'Reel') {
+    const e0 = p.escenas[0];
+    return `<div class="phone"><div class="ph-top">${LOGO}EmiteGo<span class="sp">Publicidad</span></div><div class="hook">${esc(e0.texto)}</div><div><div class="cap">${esc(e0.vo)}</div><div class="ph-bot"><div class="ad-cta">${esc(p.copy.cta)}</div></div></div></div>`;
+  }
+  if (p.formato === 'Carrusel') {
+    return `<div class="strip" tabindex="0" aria-label="Slides del carrusel">${p.slides.map((s, i) => `<div class="post${i % 2 ? ' alt' : ''}"><span class="n">${i + 1}/${p.slides.length}</span><div class="big">${esc(s.titulo)}</div><div class="sub">${esc(s.texto)}</div></div>`).join('')}</div>`;
+  }
+  if (p.formato === 'Post fijo') {
+    return `<div class="post"><span class="ring" aria-hidden="true"></span><div class="ph-top" style="display:flex;gap:8px;align-items:center;font:700 13px var(--display)"><span style="width:24px;height:24px;display:block">${LOGO}</span>EmiteGo</div><div class="big">${esc(p.arte.headline)}</div><div><div class="sub">${esc(p.arte.sub)}</div><div class="badge">15 días gratis · sin tarjeta</div></div></div>`;
+  }
+}
+
+function pieceHTML(p) {
+  const k = kind(p.formato);
+  let detail = '';
+  if (p.escenas) detail = `<div class="block"><h4>Guion escena por escena</h4><div class="scenes"><table><thead><tr><th>Tiempo</th><th>Visual</th><th>Texto en pantalla</th><th>Voz en off</th></tr></thead><tbody>${p.escenas.map(e => `<tr><td>${esc(e.t)}</td><td>${esc(e.visual)}</td><td class="os">${esc(e.texto)}</td><td class="vo">${esc(e.vo)}</td></tr>`).join('')}</tbody></table></div><div class="copy">${copyRow('Guion de voz', p.escenas.map(e => e.vo).join(' '))}</div></div>`;
+  if (p.slides) detail = `<div class="block"><h4>Slides</h4><ul class="slides">${p.slides.map(s => `<li><span><b>${esc(s.titulo)}</b><span>${esc(s.texto)}</span></span></li>`).join('')}</ul></div>`;
+  if (p.arte) detail = `<div class="block"><h4>Arte</h4><div class="copy">${copyRow('Headline', p.arte.headline)}${copyRow('Subtexto', p.arte.sub)}${copyRow('Visual', p.arte.visual, {nocopy:true})}</div></div>`;
+  return `<article class="piece" id="${p.id}" data-k="${k}">
+    <div class="piece-head"><span class="id">${p.id}</span>${tag(p.formato)}<h3>${esc(p.titulo)}</h3><span class="when">${esc(p.dia)} · ${esc(p.etapa)}</span></div>
+    <div class="piece-body">
+      <div class="mock-col">${mockup(p)}${p.vo_dur ? player(p.id, p.vo_dur) : ''}</div>
+      <div style="min-width:0">
+        <dl class="meta">
+          <div><dt>Medida</dt><dd>${esc(p.medida)}</dd></div>
+          <div><dt>Objetivo de campaña</dt><dd>${esc(p.objetivo)}</dd></div>
+          <div class="wide"><dt>Audiencia</dt><dd>${esc(p.audiencia)}</dd></div>
+        </dl>
+        <div class="block" style="margin-top:0"><h4>Copy para Ads</h4>${copyBlock(p.copy)}</div>
+        ${detail}
+        <div class="block"><div class="note"><b>Variante A/B.</b> ${esc(p.variante.replace(/^[^:]+:\s*/, ''))}</div><div class="note"><b>Producción.</b> ${esc(p.notas)}</div></div>
+      </div>
+    </div>
+  </article>`;
+}
+
+function storyHTML(s) {
+  return `<article class="piece" id="${s.id}" data-k="story">
+    <div class="piece-head"><span class="id">${s.id}</span>${tag('Stories')}<h3>${esc(s.titulo)}</h3><span class="when">${esc(s.fechas)} · semana ${s.semana}</span></div>
+    <div class="piece-body">
+      <div class="mock-col"><div class="stories">${s.frames.map(f => `<div class="phone"><div class="ph-top" style="font-size:10px">${f === s.frames[0] ? 'EmiteGo' : ''}</div><div class="hook">${esc(f.texto)}</div></div>`).join('')}</div>${player(s.id, s.vo_dur)}</div>
+      <div style="min-width:0">
+        <dl class="meta">
+          <div><dt>Medida</dt><dd>${esc(s.medida)}</dd></div>
+          <div><dt>Objetivo de campaña</dt><dd>${esc(s.objetivo)}</dd></div>
+        </dl>
+        <div class="block" style="margin-top:0"><h4>Frames</h4><div class="scenes"><table><thead><tr><th>Frame</th><th>Texto en pantalla</th><th>Visual</th></tr></thead><tbody>${s.frames.map((f, i) => `<tr><td>${i + 1}</td><td class="os">${esc(f.texto)}</td><td>${esc(f.visual)}</td></tr>`).join('')}</tbody></table></div></div>
+        <div class="block"><h4>Copy y voz</h4><div class="copy">${copyRow('Voz en off', s.vo)}${copyRow('Texto principal', s.copy.principal)}${copyRow('Botón', s.copy.cta, {html:`<span class="cta-chip">${esc(s.copy.cta)}</span>`, nocopy:true})}${copyRow('URL', fullUrl(s.copy.utm), {cls:'url'})}</div></div>
+      </div>
+    </div>
+  </article>`;
+}
+
+const all = [];
+for (const w of weeks) {
+  D.piezas.filter(p => p.semana === w).forEach(p => all.push(pieceHTML(p)));
+  all.push(storyHTML(D.stories.find(s => s.semana === w)));
+}
+document.getElementById('pieces').innerHTML = all.join('');
+
+// Filtros
+const F = [['todo','Todo'],['reel','Reels'],['carrusel','Carruseles'],['fijo','Posts fijos'],['story','Stories']];
+const fEl = document.getElementById('filters');
+fEl.innerHTML = F.map(([k, l], i) => `<button type="button" id="f-${k}" data-f="${k}" aria-pressed="${i === 0}">${l}</button>`).join('');
+fEl.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  fEl.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  document.querySelectorAll('.piece').forEach(a => a.hidden = !(b.dataset.f === 'todo' || a.dataset.k === b.dataset.f));
+});
+document.querySelectorAll('.slot').forEach(a => a.addEventListener('click', () => {
+  fEl.querySelector('[data-f="todo"]').click();
+}));
+
+// Copiar
+document.addEventListener('click', async e => {
+  const b = e.target.closest('.btn-copy'); if (!b) return;
+  const txt = b.dataset.copy;
+  try { await navigator.clipboard.writeText(txt); b.textContent = 'Copiado'; }
+  catch { const r = document.createRange(); r.selectNodeContents(b.previousElementSibling); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Seleccionado'; }
+  setTimeout(() => b.textContent = 'Copiar', 1600);
+});
+
+// Audio
+let cur = null;
+document.querySelectorAll('.play').forEach(el => {
+  const a = new Audio(); a.preload = 'none';
+  const btn = el.querySelector('button'), bar = el.querySelector('.bar i'), tm = el.querySelector('.tm');
+  const icon = playing => btn.innerHTML = playing ? '<svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><rect x="2.5" y="1.5" width="3" height="11"/><rect x="8.5" y="1.5" width="3" height="11"/></svg>' : '<svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><path d="M3 1.5v11l9-5.5z"/></svg>';
+  btn.addEventListener('click', () => {
+    if (!a.src) a.src = el.dataset.src;
+    if (a.paused) { if (cur && cur !== a) cur.pause(); cur = a; a.play().catch(() => {}); } else a.pause();
+  });
+  a.addEventListener('play', () => icon(true));
+  a.addEventListener('pause', () => icon(false));
+  a.addEventListener('ended', () => { icon(false); bar.style.width = '0'; });
+  a.addEventListener('timeupdate', () => { if (a.duration) { bar.style.width = (a.currentTime / a.duration * 100) + '%'; tm.textContent = `${fmt(a.currentTime)} / ${fmt(a.duration)}`; } });
+});
+</script>

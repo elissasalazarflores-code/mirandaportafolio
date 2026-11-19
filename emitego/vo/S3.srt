@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:01,428
+¿Llevas varios RFC?
+
+2
+00:00:01,985 --> 00:00:03,216
+Cámbiate de empresa con un
+
+3
+00:00:03,262 --> 00:00:04,876
+clic, sin cerrar sesión.
+
+4
+00:00:05,433 --> 00:00:08,452
+EmiteGo: multi RFC de verdad.

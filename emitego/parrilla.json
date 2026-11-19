@@ -1,0 +1,734 @@
+{
+  "marca": "EmiteGo",
+  "periodo": "23 nov – 18 dic 2026 · Lun / Mié / Vie",
+  "url": "https://emitego.com.mx/register",
+  "voz": {
+    "nombre": "Liam (premade)",
+    "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+    "modelo": "eleven_multilingual_v2"
+  },
+  "piezas": [
+    {
+      "id": "R01",
+      "fecha": "2026-11-23",
+      "dia": "Lun 23 nov",
+      "semana": 1,
+      "etapa": "Descubrimiento",
+      "formato": "Reel",
+      "medida": "9:16 · 1080×1920 · 25–30 s",
+      "objetivo": "Reconocimiento · optimizar a ThruPlay",
+      "audiencia": "Dueños y gerentes de pyme, administración y facturación (México, 25–55). Intereses: facturación electrónica, SAT, CONTPAQi, Aspel, contabilidad para negocios.",
+      "titulo": "Tu ERP vende. EmiteGo factura.",
+      "hook": "¿Otra vez capturando la misma venta dos veces?",
+      "escenas": [
+        {
+          "t": "0–3 s",
+          "visual": "Persona frente a dos pantallas copiando datos de un lado a otro; corte rápido con zoom al teclado.",
+          "texto": "¿La misma venta… capturada 2 veces? 😩",
+          "vo": "¿Otra vez capturando la misma venta dos veces?"
+        },
+        {
+          "t": "3–7 s",
+          "visual": "Split screen: ERP a la izquierda, portal del PAC a la derecha. Flechas rojas de ida y vuelta.",
+          "texto": "ERP ➜ portal ➜ correo ➜ Excel",
+          "vo": "Una en tu sistema… y otra en el portal para facturar. ¡Ya no!"
+        },
+        {
+          "t": "7–11 s",
+          "visual": "Pantalla se limpia en azul EmiteGo #193357. Logo entra con rebote.",
+          "texto": "Tu ERP vende. EmiteGo factura.",
+          "vo": "Con EmiteGo, tu ERP vende… y EmiteGo factura."
+        },
+        {
+          "t": "11–19 s",
+          "visual": "Animación del flujo con 4 checks verdes (#059669) que se encienden en secuencia sobre la bandeja de CFDI.",
+          "texto": "✓ Valida ✓ Timbra ✓ Envía ✓ Regresa XML y PDF",
+          "vo": "Valida los datos, timbra ante el SAT, se la manda a tu cliente y regresa el XML y el PDF a tu sistema. Todo solito."
+        },
+        {
+          "t": "19–23 s",
+          "visual": "Persona ahora relajada, atendiendo a un cliente / cerrando una venta.",
+          "texto": "Tú dedícate a vender.",
+          "vo": "Tú dedícate a vender."
+        },
+        {
+          "t": "23–28 s",
+          "visual": "End card: logo, mockup de la bandeja y botón.",
+          "texto": "15 días gratis · sin tarjeta",
+          "vo": "EmiteGo: factura en automático. Pruébalo quince días gratis, sin tarjeta."
+        }
+      ],
+      "copy": {
+        "principal": "¿Tu equipo captura cada venta dos veces: en el ERP y en el portal de facturación? 😮‍💨\n\nCon EmiteGo, cuando tu ERP confirma una venta, la factura CFDI 4.0 se valida, se timbra ante el SAT, se envía a tu cliente y el XML y el PDF regresan a tu sistema. Sin capturas manuales.\n\n✅ Facturas ilimitadas desde $99/mes + IVA\n✅ CONTPAQi, SAP B1, Aspel, Microsip, Odoo y más\n✅ 15 días gratis, sin tarjeta",
+        "titular": "Tu ERP vende. EmiteGo factura.",
+        "descripcion": "Prueba 15 días gratis",
+        "cta": "Registrarte",
+        "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=r01_erp_vende"
+      },
+      "variante": "Hook B: «Si facturas en tres lugares distintos, este video es para ti.»",
+      "notas": "Subtítulos quemados siempre (85% ve sin sonido). Primer texto en pantalla antes del segundo 1. Música urbana/lo-fi animada a −18 dB debajo de la voz.",
+      "vo_dur": 28.7
+    },
+    {
+      "id": "C02",
+      "fecha": "2026-11-25",
+      "dia": "Mié 25 nov",
+      "semana": 1,
+      "etapa": "Descubrimiento",
+      "formato": "Carrusel",
+      "medida": "4:5 · 1080×1350 · 7 slides",
+      "objetivo": "Tráfico · visitas a la página de destino",
+      "audiencia": "Pymes que facturan volumen + lookalike 1% de visitantes del sitio.",
+      "titulo": "No es un timbrador más",
+      "hook": "Tu área de facturación, en automático.",
+      "slides": [
+        {
+          "titulo": "Tu área de facturación, en automático.",
+          "texto": "No es un timbrador más. Desliza 👉"
+        },
+        {
+          "titulo": "Así facturas hoy",
+          "texto": "ERP ➜ portal del PAC ➜ correo ➜ Excel.\n4 lugares. La misma venta. Capturada dos veces."
+        },
+        {
+          "titulo": "Así factura EmiteGo",
+          "texto": "Tu ERP confirma la venta y EmiteGo:\n✓ valida los datos fiscales\n✓ genera el CFDI 4.0\n✓ lo timbra ante el SAT\n✓ lo envía a tu cliente"
+        },
+        {
+          "titulo": "Y todo regresa a tu ERP",
+          "texto": "Folio, UUID, XML y PDF de vuelta en tu sistema para cerrar la póliza sin capturas manuales."
+        },
+        {
+          "titulo": "Control que sí se audita",
+          "texto": "Validación antes de timbrar · CFDI inmutable · bitácora de cada movimiento · cola de errores con reintento."
+        },
+        {
+          "titulo": "Hecho para",
+          "texto": "🏢 Pymes que facturan cientos al mes\n🧮 Contadores y despachos con varios RFC\n⚙️ Equipos con ERP"
+        },
+        {
+          "titulo": "Empieza gratis hoy",
+          "texto": "15 días · 5 timbres de prueba · sin tarjeta.\nemitego.com.mx"
+        }
+      ],
+      "copy": {
+        "principal": "La mayoría de los sistemas timbra y ahí termina. EmiteGo hace todo el ciclo: valida, genera, timbra, envía y regresa el XML y el PDF a tu ERP. 🔁\n\nDesliza y mira cómo se ve tu facturación sin capturar dos veces 👉\n\nPrueba 15 días gratis, sin tarjeta.",
+        "titular": "Tu facturación, en automático",
+        "descripcion": "CFDI 4.0 · SAT",
+        "cta": "Más información",
+        "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=c02_no_timbrador"
+      },
+      "variante": "Portada B: «Tu ERP ya vende solo. ¿Por qué tu facturación no?»",
+      "notas": "Slides 2 y 3 en espejo (antes en gris / después en azul) para que el contraste se lea al deslizar. Máximo 20 palabras por slide."
+    },
+    {
+      "id": "P03",
+      "fecha": "2026-11-27",
+      "dia": "Vie 27 nov",
+      "semana": 1,
+      "etapa": "Descubrimiento",
+      "formato": "Post fijo",
+      "medida": "4:5 · 1080×1350",
+      "objetivo": "Tráfico · visitas a la página de destino",
+      "audiencia": "Freelancers, profesionistas y arrendadores (plan Individual) + pymes.",
+      "titulo": "60 segundos",
+      "hook": "60 s",
+      "arte": {
+        "headline": "60 segundos.",
+        "sub": "Lo que tardas en emitir una factura CFDI 4.0 completa con EmiteGo.",
+        "visual": "Número gigante «60 s» con anillo de cronómetro en verde #059669. Abajo, tarjeta flotante: «CFDI timbrado ✔ · A-1043 · $1,844.40». Sello: «15 días gratis · sin tarjeta»."
+      },
+      "copy": {
+        "principal": "Eliges al cliente, agregas conceptos y timbras. ⏱️ Menos de 60 segundos.\n\nEmiteGo hereda uso de CFDI, método y forma de pago desde tu catálogo, calcula el IVA y le envía el XML y el PDF a tu cliente en automático.\n\nFacturas ilimitadas desde $99/mes + IVA. Pruébalo gratis 15 días.",
+        "titular": "Factura en menos de 60 segundos",
+        "descripcion": "Sin instalar nada",
+        "cta": "Registrarte",
+        "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=p03_60s"
+      },
+      "variante": "Headline B: «¿Facturar te toma más de un minuto? Te está costando.»",
+      "notas": "Texto en imagen < 20% del área. El número debe leerse en miniatura de feed."
+    },
+    {
+      "id": "R04",
+      "fecha": "2026-11-30",
+      "dia": "Lun 30 nov",
+      "semana": 2,
+      "etapa": "Cómo funciona",
+      "formato": "Reel",
+      "medida": "9:16 · 1080×1920 · 30 s",
+      "objetivo": "Tráfico · visitas a la página de destino",
+      "audiencia": "Retargeting: vieron 50% de R01 + interactuaron con C02/P03 (14 días). Abierto: pymes.",
+      "titulo": "3 pasos y ya estás facturando",
+      "hook": "¿Facturar te quita horas?",
+      "escenas": [
+        {
+          "t": "0–3 s",
+          "visual": "Talento a cámara, gesto de «mira esto», jump-cut a pantalla.",
+          "texto": "Factura en 3 pasos 👇",
+          "vo": "¿Facturar te quita horas? Mira qué fácil arrancas con EmiteGo."
+        },
+        {
+          "t": "3–10 s",
+          "visual": "Grabación de pantalla: registro y carga del CSD (.cer, .key, contraseña). Sticker «01».",
+          "texto": "01 · Crea tu cuenta y sube tus sellos",
+          "vo": "Paso uno: crea tu cuenta y sube tus sellos digitales."
+        },
+        {
+          "t": "10–18 s",
+          "visual": "Importación de Excel; filas se ponen en verde una por una.",
+          "texto": "02 · Importa clientes y productos",
+          "vo": "Paso dos: importa tus clientes y productos desde Excel. EmiteGo valida RFC, régimen y código postal."
+        },
+        {
+          "t": "18–25 s",
+          "visual": "Nueva factura: seleccionar cliente, agregar concepto, botón «Timbrar» con click sonoro y confeti sutil.",
+          "texto": "03 · Elige, agrega y ¡timbra!",
+          "vo": "Paso tres: elige cliente, agrega conceptos y ¡timbra! Tu factura sale en menos de un minuto."
+        },
+        {
+          "t": "25–30 s",
+          "visual": "Laptop + celular con EmiteGo abierto. End card.",
+          "texto": "Sin instalar nada · 15 días gratis",
+          "vo": "Sin instalar nada, todo desde el navegador. Empieza gratis hoy."
+        }
+      ],
+      "copy": {
+        "principal": "Así de fácil empiezas a facturar con EmiteGo 👇\n\n1️⃣ Crea tu cuenta y sube tus sellos digitales (CSD)\n2️⃣ Importa clientes y productos desde Excel (validamos RFC, régimen y CP)\n3️⃣ Elige cliente, agrega conceptos y timbra\n\nSin instalaciones: todo desde tu navegador. 15 días gratis, sin tarjeta.",
+        "titular": "Factura hoy mismo en 3 pasos",
+        "descripcion": "Listo en 15 minutos",
+        "cta": "Registrarte",
+        "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=r04_3pasos"
+      },
+      "variante": "Hook B: «Te enseño a facturar en 30 segundos. Literal.»",
+      "notas": "Grabar pantalla real en ambiente de pruebas (sandbox) con los datos ficticios del demo. Números de paso grandes y consistentes.",
+      "vo_dur": 28.7
+    },
+    {
+      "id": "C05",
+      "fecha": "2026-12-02",
+      "dia": "Mié 2 dic",
+      "semana": 2,
+      "etapa": "Cómo funciona",
+      "formato": "Carrusel",
+      "medida": "4:5 · 1080×1350 · 8 slides",
+      "objetivo": "Clientes potenciales · registro (CompleteRegistration)",
+      "audiencia": "Pymes y profesionistas que aún no facturan en línea + retargeting de visitas a /guia.",
+      "titulo": "Checklist: tu primera factura hoy",
+      "hook": "¿Qué necesito para facturar con EmiteGo?",
+      "slides": [
+        {
+          "titulo": "¿Qué necesito para facturar con EmiteGo?",
+          "texto": "Guárdalo 📌 Con esto dejas tu cuenta lista en 15 minutos."
+        },
+        {
+          "titulo": "✅ Tu RFC activo",
+          "texto": "Razón social y régimen fiscal tal cual aparecen en el SAT. Si no coinciden, el timbrado se rechaza."
+        },
+        {
+          "titulo": "✅ Tus sellos digitales (CSD)",
+          "texto": "Archivo .cer, archivo .key y su contraseña.\nOjo: el CSD no es la e.firma."
+        },
+        {
+          "titulo": "✅ Un correo activo",
+          "texto": "Te llega un código de 6 dígitos para activar tu cuenta."
+        },
+        {
+          "titulo": "✅ Datos de tus clientes",
+          "texto": "RFC, régimen, código postal y uso de CFDI. Súbelos uno por uno o en Excel."
+        },
+        {
+          "titulo": "✅ Tu logo (opcional)",
+          "texto": "PNG o JPG para que tus PDF lleven tu marca."
+        },
+        {
+          "titulo": "La ruta completa",
+          "texto": "Cuenta 2 min ➜ Empresa 5 min ➜ Sellos 3 min ➜ Catálogos 10 min ➜ Factura 1 min"
+        },
+        {
+          "titulo": "¿Listo? Empieza gratis",
+          "texto": "Sin instalar nada. Desde tu navegador.\n15 días · sin tarjeta · emitego.com.mx"
+        }
+      ],
+      "copy": {
+        "principal": "📌 Guarda este checklist: con estos 5 datos dejas tu cuenta lista para timbrar hoy mismo.\n\nRFC activo · sellos digitales (CSD) · un correo · datos de tus clientes · tu logo (opcional).\n\nEmiteGo valida todo contra los catálogos del SAT antes de timbrar, para que ninguna factura te rebote. Empieza gratis 👇",
+        "titular": "Tu primera factura, hoy mismo",
+        "descripcion": "15 días gratis, sin tarjeta",
+        "cta": "Registrarte",
+        "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=c05_checklist"
+      },
+      "variante": "Portada B: «5 cosas que necesitas para facturar hoy (la 2 casi todos la confunden)».",
+      "notas": "Formato checklist con casillas que se marcan; ideal para guardados. Slide 3 destacar «no es la e.firma» (duda frecuente)."
+    },
+    {
+      "id": "R06",
+      "fecha": "2026-12-04",
+      "dia": "Vie 4 dic",
+      "semana": 2,
+      "etapa": "Cómo funciona",
+      "formato": "Reel",
+      "medida": "9:16 · 1080×1920 · 30 s",
+      "objetivo": "Clientes potenciales · registro (CompleteRegistration)",
+      "audiencia": "Retargeting: vieron 50% de R01/R04, visitantes del sitio 30 días que no se registraron.",
+      "titulo": "Reto: una factura en 60 segundos",
+      "hook": "Te reto: una factura completa en sesenta segundos.",
+      "escenas": [
+        {
+          "t": "0–3 s",
+          "visual": "Cronómetro grande en pantalla arrancando en 00:60. Talento señala a cámara.",
+          "texto": "RETO: factura en 60 s ⏱️",
+          "vo": "Te reto: una factura completa en sesenta segundos. ¿Va? ¡Arrancamos!"
+        },
+        {
+          "t": "3–9 s",
+          "visual": "Pantalla: buscador de clientes, se elige «Distribuidora Peninsular»; los campos fiscales se autollenan.",
+          "texto": "Cliente ✓ datos fiscales ya cargados",
+          "vo": "Eliges a Distribuidora Peninsular… sus datos fiscales ya están."
+        },
+        {
+          "t": "9–15 s",
+          "visual": "Se agrega «Servicio de facturación mensual»; panel de totales calcula IVA 16%.",
+          "texto": "IVA calculado solo",
+          "vo": "Agregas el servicio… y el IVA se calcula solito."
+        },
+        {
+          "t": "15–20 s",
+          "visual": "Zoom al total $1,844.40 y click en «Timbrar factura».",
+          "texto": "Total: $1,844.40 ➜ Timbrar",
+          "vo": "Revisas el total: mil ochocientos cuarenta y cuatro pesos. ¡Timbrar!"
+        },
+        {
+          "t": "20–26 s",
+          "visual": "Bandeja: «CFDI timbrado correctamente», UUID, XML, PDF; animación del sobre saliendo al correo.",
+          "texto": "✔ Folio fiscal · XML · PDF · enviada",
+          "vo": "Listo: folio fiscal, XML y PDF… y ya va en camino al correo de tu cliente."
+        },
+        {
+          "t": "26–30 s",
+          "visual": "Cronómetro detenido en 00:18. Talento celebra. End card.",
+          "texto": "Y sobraron 42 s 😎 · Empieza gratis",
+          "vo": "Y todavía me sobró tiempo. Así se factura con EmiteGo."
+        }
+      ],
+      "copy": {
+        "principal": "Reto aceptado ⏱️ Una factura CFDI 4.0 completa en menos de 60 segundos.\n\nCliente con datos fiscales precargados ➜ conceptos con clave SAT ➜ IVA calculado ➜ timbrada ➜ enviada por correo con XML y PDF.\n\n¿Cuánto tardas tú hoy? Haz la prueba con 5 timbres gratis 👇",
+        "titular": "¿Aceptas el reto de 60 segundos?",
+        "descripcion": "5 timbres de prueba gratis",
+        "cta": "Registrarte",
+        "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=r06_reto60"
+      },
+      "variante": "Hook B: «Cronometré cuánto tardo en facturar con EmiteGo…»",
+      "notas": "Usar los datos ficticios del demo oficial (Distribuidora Peninsular, A-1043, $1,844.40). El cronómetro debe estar visible todo el video: es el gancho de retención.",
+      "vo_dur": 28.0
+    },
+    {
+      "id": "R07",
+      "fecha": "2026-12-07",
+      "dia": "Lun 7 dic",
+      "semana": 3,
+      "etapa": "Diferenciadores",
+      "formato": "Reel",
+      "medida": "9:16 · 1080×1920 · 30 s",
+      "objetivo": "Interacción · mensajes a WhatsApp (o Registro)",
+      "audiencia": "Dueños de negocio, profesionistas y equipos comerciales que trabajan desde el celular. Intereses: WhatsApp Business, emprendimiento, ventas.",
+      "titulo": "Factura por WhatsApp",
+      "hook": "Espérate… ¿facturar por WhatsApp?",
+      "escenas": [
+        {
+          "t": "0–3 s",
+          "visual": "Primer plano del celular; llega notificación de WhatsApp «Asistente EmiteGo». Talento con cara de sorpresa.",
+          "texto": "¿Facturar por WhatsApp? 🤯",
+          "vo": "Espérate… ¿facturar por WhatsApp? ¡Sí!"
+        },
+        {
+          "t": "3–10 s",
+          "visual": "Se escribe el mensaje en el chat, letra por letra.",
+          "texto": "«Factura a Grupo Comercial del Norte, 2 servicios de consultoría de $1,500»",
+          "vo": "Le escribes al asistente de EmiteGo como a cualquier contacto: factura a Grupo Comercial del Norte, dos servicios de consultoría de mil quinientos."
+        },
+        {
+          "t": "10–17 s",
+          "visual": "Respuesta del asistente con RFC, conceptos, IVA y total $3,480.00.",
+          "texto": "Busca cliente ✓ valida RFC ✓ calcula IVA ✓",
+          "vo": "Él busca al cliente, valida el RFC, calcula el IVA y te muestra el total."
+        },
+        {
+          "t": "17–23 s",
+          "visual": "Se escribe «Sí, clave 481902»; aparece candado y «CFDI timbrado ✔».",
+          "texto": "Confirmas con tu clave de 6 dígitos 🔒",
+          "vo": "Confirmas con tu clave de seis dígitos… y listo: factura timbrada."
+        },
+        {
+          "t": "23–30 s",
+          "visual": "Mensaje final «PDF y XML enviados a facturacion@…». End card con botón de WhatsApp.",
+          "texto": "Sin formularios. Sin instalar nada.",
+          "vo": "El PDF y el XML ya le llegaron a tu cliente. Sin formularios, sin instalar nada. Solo en EmiteGo."
+        }
+      ],
+      "copy": {
+        "principal": "Sí: ahora puedes facturar por WhatsApp. 💬\n\nEscribe a quién le facturas y qué conceptos, con tus propias palabras. El asistente de EmiteGo busca al cliente, valida RFC, régimen y CP, calcula impuestos y te muestra el resumen.\n\n🔒 Nadie timbra por ti: confirmas con tu clave de 6 dígitos (vigente 15 min, de un solo uso).\n📩 El PDF y el XML llegan al correo de tu cliente al instante.",
+        "titular": "Factura por WhatsApp, sin formularios",
+        "descripcion": "Exclusivo de EmiteGo",
+        "cta": "Enviar mensaje de WhatsApp",
+        "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=r07_whatsapp"
+      },
+      "variante": "Hook B: «Este cliente me pidió factura… y la hice desde el chat en 20 segundos.»",
+      "notas": "Pieza estrella: invertir el mayor presupuesto de la semana 3. El agente de WhatsApp es del plan Ilimitado: mencionarlo en la página de destino. Destino: wa.me/525527177550.",
+      "vo_dur": 32.5
+    },
+    {
+      "id": "C08",
+      "fecha": "2026-12-09",
+      "dia": "Mié 9 dic",
+      "semana": 3,
+      "etapa": "Diferenciadores",
+      "formato": "Carrusel",
+      "medida": "4:5 · 1080×1350 · 7 slides",
+      "objetivo": "Clientes potenciales · registro (CompleteRegistration)",
+      "audiencia": "Contadores públicos y despachos contables. Intereses: contaduría, IMCP, despacho contable, CONTPAQi, SAT. Cargo: contador, auxiliar contable.",
+      "titulo": "Contadores: todos tus RFC en una cuenta",
+      "hook": "Contador: ¿cuántas pestañas abres para facturar a tus clientes?",
+      "slides": [
+        {
+          "titulo": "Contador: ¿cuántas pestañas abres para facturar a tus clientes?",
+          "texto": "Hay una forma más fácil 👉"
+        },
+        {
+          "titulo": "Varios RFC. Una sola cuenta.",
+          "texto": "Cada empresa con sus series, folios, sucursales e impuestos."
+        },
+        {
+          "titulo": "Cambias de RFC con un clic",
+          "texto": "Desde la barra superior. Todos sus datos se mueven con él."
+        },
+        {
+          "titulo": "Te avisa ANTES de timbrar",
+          "texto": "Si el régimen o el código postal no coinciden, lo sabes antes de que el SAT lo rechace."
+        },
+        {
+          "titulo": "Masiva, recurrente y global",
+          "texto": "Lotes desde Excel validados fila por fila, suscripciones que se facturan solas y factura global mensual. En una sola pantalla."
+        },
+        {
+          "titulo": "«Llevo catorce RFC de mis clientes desde una sola cuenta.»",
+          "texto": "— Javier L., contador · despacho fiscal, CDMX"
+        },
+        {
+          "titulo": "Plan Despacho: $199/mes + IVA",
+          "texto": "Hasta 10 RFC · 5 usuarios · facturas ilimitadas.\n¿Más RFC? Plan Ilimitado, sin tope.\nPrueba 15 días gratis."
+        }
+      ],
+      "copy": {
+        "principal": "Contador/a: deja de saltar entre portales para facturar a cada cliente. 🧮\n\nCon EmiteGo manejas varios RFC desde una sola cuenta, cada uno con sus series, folios y sucursales. Y la validación previa te avisa si el régimen o el CP no coinciden ANTES de timbrar.\n\nPlan Despacho: hasta 10 RFC y 5 usuarios por $199/mes + IVA, con facturas ilimitadas.",
+        "titular": "Todos tus RFC en una sola cuenta",
+        "descripcion": "Plan Despacho $199/mes",
+        "cta": "Registrarte",
+        "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=c08_contadores"
+      },
+      "variante": "Portada B: «Si llevas más de 3 RFC, necesitas ver esto.»",
+      "notas": "El testimonio es real del sitio: usar nombre abreviado tal como aparece. Tono de colega a colega."
+    },
+    {
+      "id": "P09",
+      "fecha": "2026-12-11",
+      "dia": "Vie 11 dic",
+      "semana": 3,
+      "etapa": "Diferenciadores",
+      "formato": "Post fijo",
+      "medida": "4:5 · 1080×1350",
+      "objetivo": "Tráfico · visitas a /tutorial-erp",
+      "audiencia": "Equipos con ERP: intereses SAP Business One, CONTPAQi, Aspel, Microsip, Odoo, Alegra; cargos de TI, administración y finanzas.",
+      "titulo": "Tu ERP manda la venta",
+      "hook": "Tu ERP manda la venta. EmiteGo factura.",
+      "arte": {
+        "headline": "Tu ERP manda la venta.\nEmiteGo factura.",
+        "sub": "Y te devuelve folio, UUID, XML y PDF.",
+        "visual": "Rejilla de 11 conectores (CONTPAQi, SAP Business One, Aspel, Microsip, Alegra, Odoo, Siigo, Bind ERP, Administratool, SalesPy, FisApp) alrededor del logo de EmiteGo, con líneas que llegan al centro y una flecha de regreso «UUID ✓»."
+      },
+      "copy": {
+        "principal": "¿Usas CONTPAQi, SAP Business One, Aspel, Microsip, Odoo o Alegra? 🔌\n\nTu ERP manda la venta por API, webhook o archivo; EmiteGo valida, timbra ante el SAT y te devuelve folio, UUID, XML y PDF para cerrar tu póliza sin capturas manuales.\n\n¿Sistema propio? Te integras por API REST o por archivos, sin desarrollar un conector completo.",
+        "titular": "Conecta tu ERP y factura solo",
+        "descripcion": "11 conectores + API abierta",
+        "cta": "Más información",
+        "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=p09_erp"
+      },
+      "variante": "Headline B: «¿Tu ERP ya sabe facturar solo? Con EmiteGo, sí.»",
+      "notas": "Usar logotipos de terceros solo con autorización; si no, nombres en tipografía de la marca. Destino sugerido: emitego.com.mx/tutorial-erp."
+    },
+    {
+      "id": "R10",
+      "fecha": "2026-12-14",
+      "dia": "Lun 14 dic",
+      "semana": 4,
+      "etapa": "Conversión",
+      "formato": "Reel",
+      "medida": "9:16 · 1080×1920 · 30 s",
+      "objetivo": "Clientes potenciales · registro (CompleteRegistration)",
+      "audiencia": "Retargeting caliente: visitantes del sitio 30 días, vieron 75% de cualquier reel, interactuaron con el perfil. Excluir registrados.",
+      "titulo": "Antes vs. después",
+      "hook": "Antes: facturabas en tres lugares.",
+      "escenas": [
+        {
+          "t": "0–4 s",
+          "visual": "Pantalla dividida, lado «ANTES» en gris: tres ventanas apiladas (ERP, portal, Excel), cara de estrés.",
+          "texto": "ANTES 😩 3 lugares",
+          "vo": "Antes: facturabas en tres lugares. El ERP, el portal del PAC… y un Excel para los complementos de pago."
+        },
+        {
+          "t": "4–12 s",
+          "visual": "Swipe a «AHORA» en azul: una venta se confirma en el ERP y la factura aparece timbrada sola.",
+          "texto": "AHORA 😎 1 venta = 1 factura automática",
+          "vo": "Ahora: la venta se confirma en tu ERP y la factura sale timbrada, enviada y con el folio fiscal de regreso en tu sistema."
+        },
+        {
+          "t": "12–21 s",
+          "visual": "Cita animada sobre fondo azul con comillas grandes.",
+          "texto": "«Dejamos de capturar todo dos veces.» — Rocío M., gerente de operaciones, Monterrey",
+          "vo": "Así lo cuenta Rocío, gerente de operaciones en Monterrey: dejamos de capturar todo dos veces."
+        },
+        {
+          "t": "21–28 s",
+          "visual": "End card con precio desde $99 y botón.",
+          "texto": "15 días gratis · sin tarjeta",
+          "vo": "¿Y tú, cuándo empiezas? Pruébalo quince días gratis."
+        }
+      ],
+      "copy": {
+        "principal": "«Facturábamos en tres lugares: el ERP, el portal del PAC y Excel para los complementos. Ahora la venta se confirma en el ERP y el CFDI sale timbrado, enviado y con el UUID de regreso.» — Rocío M., distribuidora de autopartes, Monterrey\n\nDeja de capturar todo dos veces. Prueba EmiteGo 15 días gratis, sin tarjeta.",
+        "titular": "Deja de capturar todo dos veces",
+        "descripcion": "Facturas ilimitadas desde $99",
+        "cta": "Registrarte",
+        "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=r10_antes_despues"
+      },
+      "variante": "Hook B: «Así se veía nuestra facturación antes de EmiteGo…»",
+      "notas": "Testimonio tomado del sitio, citar sin modificar el sentido. Contraste fuerte gris vs azul para el swipe.",
+      "vo_dur": 27.1
+    },
+    {
+      "id": "C11",
+      "fecha": "2026-12-16",
+      "dia": "Mié 16 dic",
+      "semana": 4,
+      "etapa": "Conversión",
+      "formato": "Carrusel",
+      "medida": "4:5 · 1080×1350 · 6 slides",
+      "objetivo": "Ventas / Clientes potenciales · registro",
+      "audiencia": "Retargeting: visitaron #planes o /register sin completar + interactuaron con C08. Abierto: lookalike 1% de registrados.",
+      "titulo": "¿Cuál plan es para ti?",
+      "hook": "Facturas ilimitadas desde $99 al mes.",
+      "slides": [
+        {
+          "titulo": "Facturas ilimitadas desde $99 al mes.",
+          "texto": "¿Cuál plan es para ti? 👉"
+        },
+        {
+          "titulo": "Prueba · Gratis 15 días",
+          "texto": "5 timbres · 1 empresa emisora · 2 usuarios · catálogos e importación. Sin tarjeta."
+        },
+        {
+          "titulo": "Individual · $99/mes",
+          "texto": "Freelancers, arrendadores y profesionistas.\n1 RFC · 2 usuarios · cancelaciones y notas de crédito · complementos de pago · PDF con tu logo."
+        },
+        {
+          "titulo": "Despacho · $199/mes ⭐ Más elegido",
+          "texto": "Contadores y grupos.\nHasta 10 RFC · 5 usuarios · masiva y recurrente · facturas globales · importación desde Excel."
+        },
+        {
+          "titulo": "Ilimitado · $399/mes",
+          "texto": "Empresas con ERP y alto volumen.\nRFC y usuarios sin tope · CONTPAQi, SAP y Aspel · API y webhooks · agente de WhatsApp · soporte prioritario."
+        },
+        {
+          "titulo": "Paga anual y llévate 2 meses gratis",
+          "texto": "Precios en MXN + IVA. Cancelas cuando quieras y tus CFDI timbrados no se afectan.\nEmpieza tu prueba hoy."
+        }
+      ],
+      "copy": {
+        "principal": "Planes justos: pagas por lo que usas. 💸\n\nTodos los planes incluyen facturas ilimitadas. Solo cambia cuántos RFC, usuarios y conectores necesitas:\n\n• Individual $99/mes\n• Despacho $199/mes (el más elegido)\n• Ilimitado $399/mes\n\nCon pago anual te ahorras 2 meses. Precios + IVA. Empieza con 15 días gratis, sin tarjeta.",
+        "titular": "Facturas ilimitadas desde $99/mes",
+        "descripcion": "Anual: ahorra 2 meses",
+        "cta": "Registrarte",
+        "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=c11_planes"
+      },
+      "variante": "Portada B: «¿Cuánto cuesta dejar de capturar dos veces? Menos que una comida.»",
+      "notas": "Cada plan en su color de tarjeta; Despacho resaltado con borde verde. Precios siempre con «+ IVA»."
+    },
+    {
+      "id": "R12",
+      "fecha": "2026-12-18",
+      "dia": "Vie 18 dic",
+      "semana": 4,
+      "etapa": "Conversión",
+      "formato": "Reel",
+      "medida": "9:16 · 1080×1920 · 30 s",
+      "objetivo": "Ventas / Clientes potenciales · registro",
+      "audiencia": "Todas las audiencias de retargeting (vistas de video 25%+, sitio 60 días, perfil 60 días) + lookalike 1–3% de registrados. Excluir clientes.",
+      "titulo": "Arranca 2027 facturando en automático",
+      "hook": "Se acaba el año… ¿y tú sigues persiguiendo facturas?",
+      "escenas": [
+        {
+          "t": "0–4 s",
+          "visual": "Calendario de diciembre arrancando hojas; montaña de facturas en el escritorio.",
+          "texto": "¿Cerrar el año persiguiendo facturas? 🙅",
+          "vo": "Se acaba el año… ¿y tú sigues persiguiendo facturas?"
+        },
+        {
+          "t": "4–8 s",
+          "visual": "Transición a «2027» con chispas; escritorio limpio y laptop con EmiteGo.",
+          "texto": "2027 arranca diferente ✨",
+          "vo": "Este dos mil veintisiete arranca diferente."
+        },
+        {
+          "t": "8–14 s",
+          "visual": "Precio «desde $99/mes + IVA» con «facturas ilimitadas» en sello.",
+          "texto": "Facturas ilimitadas desde $99/mes + IVA",
+          "vo": "Con EmiteGo tienes facturas ilimitadas desde noventa y nueve pesos al mes."
+        },
+        {
+          "t": "14–21 s",
+          "visual": "Tres íconos que caen: recurrente, Excel masivo, factura global; luego el selector de RFC.",
+          "texto": "Recurrente · masiva · global · multi RFC",
+          "vo": "Facturas recurrentes, masivas desde Excel, factura global… y si eres contador, hasta diez RFC en una sola cuenta."
+        },
+        {
+          "t": "21–25 s",
+          "visual": "Etiqueta «Anual: ahorra 2 meses» que se pega como sticker.",
+          "texto": "Plan anual = 2 meses gratis 🎁",
+          "vo": "Y con el plan anual, te ahorras dos meses."
+        },
+        {
+          "t": "25–30 s",
+          "visual": "End card con logo y botón.",
+          "texto": "15 días gratis · sin tarjeta",
+          "vo": "Crea tu cuenta hoy: quince días gratis, sin tarjeta. EmiteGo: tu ERP vende, EmiteGo factura."
+        }
+      ],
+      "copy": {
+        "principal": "Cierra 2026 sin perseguir facturas y arranca 2027 en automático. 🎆\n\n✅ Facturas ilimitadas desde $99/mes + IVA\n✅ Recurrentes, masivas desde Excel y globales\n✅ Hasta 10 RFC en el plan Despacho\n✅ Plan anual: ahorra 2 meses\n\nCrea tu cuenta hoy y prueba 15 días gratis, sin tarjeta.",
+        "titular": "Arranca 2027 facturando solo",
+        "descripcion": "Anual: ahorra 2 meses",
+        "cta": "Registrarte",
+        "utm": "utm_source=meta&utm_medium=paid_social&utm_campaign=emitego_dic26&utm_content=r12_2027"
+      },
+      "variante": "Hook B: «Tu propósito de año nuevo: no volver a capturar una factura a mano.»",
+      "notas": "Mantener al aire hasta el 31 de diciembre. Si hay presupuesto extra, duplicar en ubicación Stories con el mismo audio.",
+      "vo_dur": 32.5
+    }
+  ],
+  "stories": [
+    {
+      "id": "S1",
+      "semana": 1,
+      "fechas": "23 – 29 nov",
+      "titulo": "¿Cuánto tardas en facturar?",
+      "objetivo": "Tráfico · ubicación Stories IG/FB",
+      "medida": "9:16 · 3 frames · 10 s",
+      "frames": [
+        {
+          "texto": "¿Cuánto tardas en hacer UNA factura? ⏱️",
+          "visual": "Fondo azul #193357, encuesta: «+10 min 😩 / −1 min 😎»."
+        },
+        {
+          "texto": "Con EmiteGo: menos de 60 segundos.",
+          "visual": "Mockup de la bandeja con «CFDI timbrado ✔»."
+        },
+        {
+          "texto": "15 días gratis · sin tarjeta",
+          "visual": "Logo + flecha animada hacia el botón «Registrarte»."
+        }
+      ],
+      "vo": "¿Cuánto tiempo te toma hacer una factura? Con EmiteGo, menos de un minuto. Desliza hacia arriba y pruébalo gratis.",
+      "copy": {
+        "principal": "¿Facturar te toma más de un minuto? Con EmiteGo, no. Prueba 15 días gratis.",
+        "cta": "Registrarte",
+        "utm": "utm_content=s1_cuanto_tardas"
+      },
+      "vo_dur": 8.1
+    },
+    {
+      "id": "S2",
+      "semana": 2,
+      "fechas": "30 nov – 6 dic",
+      "titulo": "Checklist exprés",
+      "objetivo": "Clientes potenciales · registro",
+      "medida": "9:16 · 3 frames · 10 s",
+      "frames": [
+        {
+          "texto": "Para facturar HOY necesitas:",
+          "visual": "Lista con casillas que se marcan: RFC · sellos digitales · correo."
+        },
+        {
+          "texto": "…y 15 minutos.",
+          "visual": "Reloj de arena que se voltea; texto «sin instalar nada»."
+        },
+        {
+          "texto": "Empieza gratis 👆",
+          "visual": "Botón grande, sticker de enlace a /register."
+        }
+      ],
+      "vo": "Tu checklist para facturar hoy mismo: RFC, sellos digitales, un correo… y quince minutos. ¡Desliza y empieza!",
+      "copy": {
+        "principal": "RFC + sellos digitales + un correo = tu primera factura hoy. Empieza gratis.",
+        "cta": "Registrarte",
+        "utm": "utm_content=s2_checklist"
+      },
+      "vo_dur": 8.0
+    },
+    {
+      "id": "S3",
+      "semana": 3,
+      "fechas": "7 – 13 dic",
+      "titulo": "Multi RFC de verdad",
+      "objetivo": "Clientes potenciales · registro (contadores)",
+      "medida": "9:16 · 3 frames · 10 s",
+      "frames": [
+        {
+          "texto": "¿Llevas varios RFC? 🧮",
+          "visual": "Pregunta tipo quiz: «¿Cuántos RFC llevas? 1–3 / 4–10 / +10»."
+        },
+        {
+          "texto": "Cambia de empresa con un clic.",
+          "visual": "Grabación del selector de RFC en la barra superior."
+        },
+        {
+          "texto": "Plan Despacho · hasta 10 RFC · $199/mes + IVA",
+          "visual": "Tarjeta del plan + botón."
+        }
+      ],
+      "vo": "¿Llevas varios RFC? Cámbiate de empresa con un clic, sin cerrar sesión. EmiteGo: multi RFC de verdad.",
+      "copy": {
+        "principal": "Varios RFC, una sola cuenta. Plan Despacho desde $199/mes + IVA.",
+        "cta": "Registrarte",
+        "utm": "utm_content=s3_multirfc"
+      },
+      "vo_dur": 8.5
+    },
+    {
+      "id": "S4",
+      "semana": 4,
+      "fechas": "14 – 31 dic",
+      "titulo": "Cuenta regresiva 2027",
+      "objetivo": "Ventas / registro · retargeting",
+      "medida": "9:16 · 3 frames · 10 s",
+      "frames": [
+        {
+          "texto": "Faltan pocos días para 2027 🎆",
+          "visual": "Sticker de cuenta regresiva al 1 de enero."
+        },
+        {
+          "texto": "Empieza el año facturando en automático.",
+          "visual": "Flujo ERP ➜ EmiteGo ➜ cliente con checks."
+        },
+        {
+          "texto": "15 días gratis · anual: 2 meses de regalo",
+          "visual": "Botón + precio desde $99."
+        }
+      ],
+      "vo": "Últimos días del año: arranca dos mil veintisiete facturando en automático. Quince días gratis, sin tarjeta. ¡Desliza!",
+      "copy": {
+        "principal": "Arranca 2027 facturando en automático. 15 días gratis, sin tarjeta.",
+        "cta": "Registrarte",
+        "utm": "utm_content=s4_2027"
+      },
+      "vo_dur": 8.2
+    }
+  ]
+}

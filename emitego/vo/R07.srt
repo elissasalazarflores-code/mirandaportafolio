@@ -1,0 +1,79 @@
+1
+00:00:00,000 --> 00:00:02,206
+Espérate… ¿facturar por WhatsApp?
+
+2
+00:00:02,508 --> 00:00:04,981
+¡Sí! Le escribes al asistente
+
+3
+00:00:05,027 --> 00:00:06,467
+de EmiteGo como a cualquier
+
+4
+00:00:06,525 --> 00:00:08,754
+contacto: factura a Grupo Comercial
+
+5
+00:00:08,800 --> 00:00:09,427
+del Norte,
+
+6
+00:00:09,648 --> 00:00:11,308
+dos servicios de consultoría de
+
+7
+00:00:11,378 --> 00:00:12,283
+mil quinientos.
+
+8
+00:00:12,934 --> 00:00:14,095
+Él busca al cliente,
+
+9
+00:00:14,257 --> 00:00:15,732
+valida el RFC,
+
+10
+00:00:15,836 --> 00:00:17,230
+calcula el IVA y te
+
+11
+00:00:17,276 --> 00:00:18,263
+muestra el total.
+
+12
+00:00:19,145 --> 00:00:20,364
+Confirmas con tu clave de
+
+13
+00:00:20,434 --> 00:00:21,432
+seis dígitos…
+
+14
+00:00:21,734 --> 00:00:22,315
+y listo:
+
+15
+00:00:22,617 --> 00:00:23,661
+factura timbrada.
+
+16
+00:00:24,021 --> 00:00:25,658
+El PDF y el XML
+
+17
+00:00:26,216 --> 00:00:27,040
+ya le llegaron a tu
+
+18
+00:00:27,063 --> 00:00:29,257
+cliente. Sin formularios,
+
+19
+00:00:29,374 --> 00:00:30,442
+sin instalar nada.
+
+20
+00:00:31,092 --> 00:00:32,462
+Solo en EmiteGo.

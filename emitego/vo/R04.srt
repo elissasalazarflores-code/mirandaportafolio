@@ -1,0 +1,71 @@
+1
+00:00:00,000 --> 00:00:01,440
+¿Facturar te quita horas?
+
+2
+00:00:01,997 --> 00:00:03,425
+Mira qué fácil arrancas con
+
+3
+00:00:03,495 --> 00:00:05,677
+EmiteGo. Paso uno:
+
+4
+00:00:05,840 --> 00:00:06,966
+crea tu cuenta y sube
+
+5
+00:00:07,012 --> 00:00:08,150
+tus sellos digitales.
+
+6
+00:00:08,800 --> 00:00:09,543
+Paso dos:
+
+7
+00:00:09,834 --> 00:00:11,389
+importa tus clientes y productos
+
+8
+00:00:11,424 --> 00:00:12,272
+desde Excel.
+
+9
+00:00:12,922 --> 00:00:14,779
+EmiteGo valida RFC,
+
+10
+00:00:14,907 --> 00:00:16,591
+régimen y código postal.
+
+11
+00:00:17,241 --> 00:00:18,065
+Paso tres:
+
+12
+00:00:18,611 --> 00:00:19,493
+elige cliente,
+
+13
+00:00:19,563 --> 00:00:21,420
+agrega conceptos y ¡timbra!
+
+14
+00:00:22,070 --> 00:00:23,220
+Tu factura sale en menos
+
+15
+00:00:23,255 --> 00:00:23,916
+de un minuto.
+
+16
+00:00:24,172 --> 00:00:25,182
+Sin instalar nada,
+
+17
+00:00:25,344 --> 00:00:26,633
+todo desde el navegador.
+
+18
+00:00:27,190 --> 00:00:28,607
+Empieza gratis hoy.

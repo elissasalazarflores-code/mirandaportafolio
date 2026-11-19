@@ -1,0 +1,63 @@
+1
+00:00:00,000 --> 00:00:00,662
+Te reto:
+
+2
+00:00:01,022 --> 00:00:02,833
+una factura completa en sesenta
+
+3
+00:00:02,879 --> 00:00:04,203
+segundos. ¿Va?
+
+4
+00:00:04,400 --> 00:00:07,465
+¡Arrancamos! Eliges a Distribuidora Peninsular…
+
+5
+00:00:07,663 --> 00:00:09,149
+sus datos fiscales ya están.
+
+6
+00:00:09,451 --> 00:00:10,832
+Agregas el servicio…
+
+7
+00:00:11,088 --> 00:00:12,086
+y el IVA se calcula
+
+8
+00:00:12,132 --> 00:00:14,350
+solito. Revisas el total:
+
+9
+00:00:14,710 --> 00:00:16,440
+mil ochocientos cuarenta y cuatro
+
+10
+00:00:16,486 --> 00:00:17,949
+pesos. ¡Timbrar!
+
+11
+00:00:18,356 --> 00:00:19,981
+Listo: folio fiscal,
+
+12
+00:00:20,202 --> 00:00:21,873
+XML y PDF…
+
+13
+00:00:22,280 --> 00:00:23,151
+y ya va en camino
+
+14
+00:00:23,185 --> 00:00:24,277
+al correo de tu cliente.
+
+15
+00:00:24,637 --> 00:00:25,902
+Y todavía me sobró tiempo.
+
+16
+00:00:26,308 --> 00:00:27,957
+Así se factura con EmiteGo.

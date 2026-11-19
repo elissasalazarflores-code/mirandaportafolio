@@ -1,0 +1,63 @@
+1
+00:00:00,000 --> 00:00:02,485
+Antes: facturabas en tres lugares.
+
+2
+00:00:02,786 --> 00:00:04,122
+El ERP,
+
+3
+00:00:04,377 --> 00:00:05,468
+el portal del PAC…
+
+4
+00:00:05,724 --> 00:00:06,966
+y un Excel para los
+
+5
+00:00:07,024 --> 00:00:08,336
+complementos de pago.
+
+6
+00:00:08,986 --> 00:00:10,925
+Ahora: la venta se confirma
+
+7
+00:00:10,971 --> 00:00:12,109
+en tu ERP y la
+
+8
+00:00:12,167 --> 00:00:13,526
+factura sale timbrada,
+
+9
+00:00:13,827 --> 00:00:15,337
+enviada y con el folio
+
+10
+00:00:15,383 --> 00:00:16,428
+fiscal de regreso en tu
+
+11
+00:00:16,486 --> 00:00:18,913
+sistema. Así lo cuenta Rocío,
+
+12
+00:00:19,029 --> 00:00:20,840
+gerente de operaciones en Monterrey:
+
+13
+00:00:21,200 --> 00:00:22,489
+dejamos de capturar todo dos
+
+14
+00:00:22,547 --> 00:00:23,870
+veces. ¿Y tú,
+
+15
+00:00:24,010 --> 00:00:24,904
+cuándo empiezas?
+
+16
+00:00:25,206 --> 00:00:27,075
+Pruébalo quince días gratis.

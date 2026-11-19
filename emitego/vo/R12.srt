@@ -1,0 +1,79 @@
+1
+00:00:00,000 --> 00:00:01,173
+Se acaba el año…
+
+2
+00:00:01,533 --> 00:00:03,518
+¿y tú sigues persiguiendo facturas?
+
+3
+00:00:03,994 --> 00:00:05,875
+Este dos mil veintisiete arranca
+
+4
+00:00:05,909 --> 00:00:08,139
+diferente. Con EmiteGo tienes
+
+5
+00:00:08,197 --> 00:00:10,043
+facturas ilimitadas desde noventa y
+
+6
+00:00:10,077 --> 00:00:11,134
+nueve pesos al mes.
+
+7
+00:00:12,016 --> 00:00:13,270
+Facturas recurrentes,
+
+8
+00:00:13,410 --> 00:00:14,791
+masivas desde Excel,
+
+9
+00:00:15,047 --> 00:00:16,080
+factura global…
+
+10
+00:00:16,382 --> 00:00:17,381
+y si eres contador,
+
+11
+00:00:17,439 --> 00:00:19,052
+hasta diez RFC en una
+
+12
+00:00:19,110 --> 00:00:19,830
+sola cuenta.
+
+13
+00:00:20,237 --> 00:00:21,270
+Y con el plan anual,
+
+14
+00:00:21,432 --> 00:00:22,651
+te ahorras dos meses.
+
+15
+00:00:23,209 --> 00:00:24,347
+Crea tu cuenta hoy:
+
+16
+00:00:24,823 --> 00:00:26,053
+quince días gratis,
+
+17
+00:00:26,413 --> 00:00:27,284
+sin tarjeta.
+
+18
+00:00:28,038 --> 00:00:29,165
+EmiteGo:
+
+19
+00:00:29,420 --> 00:00:30,581
+tu ERP vende,
+
+20
+00:00:31,057 --> 00:00:32,462
+EmiteGo factura.
