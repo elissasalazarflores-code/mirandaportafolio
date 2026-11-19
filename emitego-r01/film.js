@@ -58,16 +58,15 @@ const HITS = [
 ];
 
 // ------------------------------------------------------------------ helpers
-const LOGO_DOC = new Path2D('M15.5 10.5h12.8l5.2 5.2v19.3a2.5 2.5 0 0 1-2.5 2.5H15.5a2.5 2.5 0 0 1-2.5-2.5V13a2.5 2.5 0 0 1 2.5-2.5z');
-const LOGO_FOLD = new Path2D('M28.3 10.5l5.2 5.2h-5.2z');
-const LOGO_PLANE = new Path2D('M18.6 22.2l12.6 3.4-9.4 2.5-1.1 4.6-1.9-4-3.3.9 3.1-7.4z');
-function logo(ctx, x, y, size, onDark) {
-  ctx.save(); ctx.translate(x, y); ctx.scale(size / 48, size / 48);
-  rrect(ctx, 0, 0, 48, 48, 12); ctx.fillStyle = onDark ? 'rgba(255,255,255,.12)' : C.navy; ctx.fill();
-  ctx.fillStyle = '#fff'; ctx.fill(LOGO_DOC);
-  ctx.fillStyle = '#AEBBCE'; ctx.fill(LOGO_FOLD);
-  ctx.fillStyle = C.navy; ctx.fill(LOGO_PLANE);
-  ctx.restore();
+// Real logo (emitego/brand/logo_blanco.png, from the brand's own file): lockup 1175x324, icon = left 391 px.
+const LOGO_W = 1175, LOGO_H = 324, ICON_W = 391;
+function lockup(ctx, img, x, y, h, reveal = 1) {
+  // reveal 0..1 wipes the wordmark in from the left; the icon is always whole
+  if (!img) return;
+  const s = h / LOGO_H;
+  ctx.drawImage(img, 0, 0, ICON_W, LOGO_H, x, y, ICON_W * s, h);
+  const ww = (LOGO_W - ICON_W) * clamp(reveal);
+  if (ww > 0) ctx.drawImage(img, ICON_W, 0, ww, LOGO_H, x + ICON_W * s, y, ww * s, h);
 }
 function check(ctx, cx, cy, r, k, color = '#fff', lw = 0) {
   // stroke-drawn check mark, k = 0..1 draw-on
@@ -255,16 +254,16 @@ function sceneOld(ctx, u) {
 }
 
 // ------------------------------------------------------------------ C. drop: brand line   (u 15.6..24.6)
-function sceneDrop(ctx, u) {
+function sceneDrop(ctx, u, IMG) {
   // navy rises from the bottom on the riser, lands exactly on the drop
   const rise = E.outExpo(prog(u, 15.55, 16));
   const exit = E.inCubic(prog(u, 24.0, 24.6));
   ctx.fillStyle = C.navy; ctx.fillRect(0, H * (1 - rise) - exit * H, W, H * rise + 2);
   if (u < 16) return;
   ctx.save(); ctx.translate(0, -exit * H);
-  // ghost logo, slowly growing behind the words
+  // real logo lockup, top-left
   const kl = springU(u, 16, SPRING.bouncy);
-  ctx.save(); ctx.translate(S.x + 8 + 55, 330 + 55); ctx.scale(kl, kl); ctx.translate(-55, -55); logo(ctx, 0, 0, 110, true); ctx.restore();
+  ctx.save(); ctx.translate(S.x + 8, 330); ctx.scale(kl, kl); lockup(ctx, IMG.logoW, 0, -50, 100, E.outCubic(prog(u, 16.3, 17.2))); ctx.restore();
   const x = S.x + 8, size = 196, top = 680;
   springWord(ctx, 'Tu ERP', x, top, size, C.white, 17.6, u);
   springWord(ctx, 'vende.', x, top + 200, size, C.white, 19.0, u);
@@ -379,17 +378,13 @@ function sceneEnd(ctx, u, IMG) {
   const rise = E.outExpo(prog(u, 47.7, 48.05));
   ctx.fillStyle = C.navy; ctx.fillRect(0, H * (1 - rise), W, H * rise + 2);
   if (u < 48) return;
+  // real logo: icon pops on the impact, the wordmark wipes in after it
   const kl = springU(u, 48.2, SPRING.bouncy);
-  const ls = 200;
-  ctx.save(); ctx.translate(W / 2, 470); ctx.scale(kl, kl); ctx.rotate((1 - kl) * -0.4); logo(ctx, -ls / 2, -ls / 2, ls, true); ctx.restore();
-  // wordmark, centred, each glyph springs
-  const f = font(150, 800, D), L = layout(ctx, 'EmiteGo', f, -4);
-  const x0 = (W - L.width) / 2;
-  L.glyphs.forEach((g, j) => {
-    const k = springU(u, 48.6 + j * 0.05, SPRING.bouncy);
-    if (k <= 0.001) return;
-    glyph(ctx, g.ch, x0 + g.cx, 760 + (1 - k) * 120, f, C.white, 1, 1);
-  });
+  const lh = 230, lw = lh * LOGO_W / LOGO_H, lx = (W - lw) / 2, ly = 540;
+  ctx.save(); ctx.translate(lx + lh * ICON_W / LOGO_H / 2, ly + lh / 2); ctx.scale(kl, kl); ctx.rotate((1 - kl) * -0.3);
+  ctx.translate(-(lx + lh * ICON_W / LOGO_H / 2), -(ly + lh / 2));
+  lockup(ctx, IMG.logoW, lx, ly, lh, E.outCubic(prog(u, 48.7, 49.6)));
+  ctx.restore();
   const kt = E.outCubic(prog(u, 50.8, 51.6));
   if (kt > 0) { ctx.globalAlpha = kt; text(ctx, 'Factura en automático.', W / 2, 850 + (1 - kt) * 30, font(50, 500, UI), '#B9C6DA', 'center'); ctx.globalAlpha = 1; }
   // green pill
@@ -418,13 +413,13 @@ function sceneEnd(ctx, u, IMG) {
 
 M.film({
   fonts: [font(100, 800, D), font(40, 500, UI), font(40, 700, UI)],
-  images: { hero: 'assets/shots/section_00_tu-erp-vende.png' },
+  images: { hero: 'assets/shots/section_00_tu-erp-vende.png', logoW: 'assets/logo/logo_blanco.png' },
   hits: HITS,
   draw(ctx, u, t, IMG) {
     let dark = false;
     if (u < 6.8) { if (u >= 6.2) sceneOld(ctx, u); sceneHook(ctx, u, IMG); }
-    else if (u < 16) { sceneOld(ctx, u); sceneDrop(ctx, u); }
-    else if (u < 24.6) { if (u >= 24.0) sceneFlow(ctx, u, IMG); sceneDrop(ctx, u); dark = u < 24.3; }
+    else if (u < 16) { sceneOld(ctx, u); sceneDrop(ctx, u, IMG); }
+    else if (u < 24.6) { if (u >= 24.0) sceneFlow(ctx, u, IMG); sceneDrop(ctx, u, IMG); dark = u < 24.3; }
     else if (u < 44.0) { sceneFlow(ctx, u, IMG); sceneSell(ctx, u, IMG); dark = u >= 43.8; }
     else if (u < 48.05) { sceneSell(ctx, u, IMG); sceneEnd(ctx, u, IMG); dark = true; }
     else { sceneEnd(ctx, u, IMG); dark = true; }

@@ -25,13 +25,6 @@ const HITS = [
   [16.7, 'gratis', 'coins'],
 ];
 
-const LOGO = [new Path2D('M15.5 10.5h12.8l5.2 5.2v19.3a2.5 2.5 0 0 1-2.5 2.5H15.5a2.5 2.5 0 0 1-2.5-2.5V13a2.5 2.5 0 0 1 2.5-2.5z'), new Path2D('M28.3 10.5l5.2 5.2h-5.2z'), new Path2D('M18.6 22.2l12.6 3.4-9.4 2.5-1.1 4.6-1.9-4-3.3.9 3.1-7.4z')];
-function logo(ctx, x, y, size) {
-  ctx.save(); ctx.translate(x, y); ctx.scale(size / 48, size / 48);
-  rrect(ctx, 0, 0, 48, 48, 12); ctx.fillStyle = 'rgba(255,255,255,.12)'; ctx.fill();
-  ctx.fillStyle = '#fff'; ctx.fill(LOGO[0]); ctx.fillStyle = '#AEBBCE'; ctx.fill(LOGO[1]); ctx.fillStyle = C.navy; ctx.fill(LOGO[2]);
-  ctx.restore();
-}
 function springWord(ctx, str, x, base, size, color, u0, u, align = 'left') {
   const f = font(size, 800, D), L = layout(ctx, str, f, -0.035 * size);
   const x0 = align === 'center' ? x - L.width / 2 : x;
@@ -130,12 +123,13 @@ function f2(ctx, u, IMG) {
 }
 
 // ---- frame 3: CTA + swipe up  (u 12.6..)
-function f3(ctx, u) {
+function f3(ctx, u, IMG) {
   const enter = 1 - E.outCubic(prog(u, 12.6, 13.2));
   ctx.save(); ctx.translate(enter * W, 0);
   fill(ctx, C.navy);
   const kl = springU(u, 13.2, SPRING.bouncy);
-  ctx.save(); ctx.translate(W / 2, 400); ctx.scale(kl, kl); logo(ctx, -80, -80, 160); ctx.restore();
+  const lh = 150, lw = lh * 1175 / 324;
+  if (IMG.logoW) { ctx.save(); ctx.translate(W / 2, 410); ctx.scale(kl, kl); ctx.drawImage(IMG.logoW, -lw / 2, -lh / 2, lw, lh); ctx.restore(); }
   springWord(ctx, '15 días', W / 2, 680, 150, C.white, 13.5, u, 'center');
   springWord(ctx, 'gratis', W / 2, 830, 150, C.mint, 14.0, u, 'center');
   const kt = E.outCubic(prog(u, 14.6, 15.2));
@@ -163,13 +157,13 @@ function f3(ctx, u) {
 
 M.film({
   fonts: [font(100, 800, D), font(40, 500, UI), font(40, 700, UI)],
-  images: { hero: 'assets/shots/section_00_tu-erp-vende.png' },
+  images: { hero: 'assets/shots/section_00_tu-erp-vende.png', logoW: 'assets/logo/logo_blanco.png' },
   hits: HITS,
   draw(ctx, u, t, IMG) {
     let dark = true;
     if (u < 8) { f1(ctx, u); f2(ctx, u, IMG); dark = u < 7.9; }
     else if (u < 12.6) { f2(ctx, u, IMG); dark = false; }
-    else { f2(ctx, u, IMG); f3(ctx, u); dark = u > 12.9; }
+    else { f2(ctx, u, IMG); f3(ctx, u, IMG); dark = u > 12.9; }
     captions(ctx, t, dark);
   },
 });

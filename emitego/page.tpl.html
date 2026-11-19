@@ -29,7 +29,7 @@ h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing
 header.top{background:var(--navy);color:var(--on-navy)}
 header.top .wrap{padding-block:36px 30px;display:grid;gap:22px}
 .brand{display:flex;align-items:center;gap:12px;font:800 20px var(--display)}
-.brand svg{width:40px;height:40px;flex:none}
+
 header.top h1{font-size:clamp(28px,4.4vw,44px);font-weight:800;max-width:22ch;line-height:1.08}
 header.top p{color:var(--muted-on-navy);max-width:68ch;margin:0}
 .facts{display:flex;flex-wrap:wrap;gap:10px}
@@ -128,7 +128,7 @@ section>.lede{color:var(--ink-2);margin:0 0 18px;max-width:72ch}
 .mock-col{display:grid;gap:12px;align-content:start}
 .phone{position:relative;aspect-ratio:9/16;max-width:100%;width:100%;border-radius:22px;overflow:hidden;background:linear-gradient(165deg,var(--navy-2),#0f2140 70%);color:#fff;display:grid;grid-template-rows:auto 1fr auto;padding:18px 16px;box-shadow:0 10px 30px rgba(15,23,42,.18)}
 .phone .ph-top{display:flex;align-items:center;gap:8px;font:700 13px var(--display)}
-.phone .ph-top svg{width:24px;height:24px}
+.phone .ph-top img{height:22px;width:auto}
 .phone .ph-top .sp{font:500 11px var(--body);opacity:.7;margin-left:auto}
 .phone .hook{align-self:center;font:800 clamp(22px,2.6vw,28px)/1.12 var(--display);text-wrap:balance}
 .phone .cap{justify-self:center;background:rgba(0,0,0,.45);font:600 13px var(--body);padding:5px 10px;border-radius:6px;text-align:center;min-height:2.6em;display:grid;place-items:center}
@@ -205,7 +205,7 @@ footer{color:var(--ink-3);font-size:12.5px;padding-block:0 40px}
 
 <header class="top">
   <div class="wrap">
-    <div class="brand"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#fff" fill-opacity=".12"/><path d="M15.5 10.5h12.8l5.2 5.2v19.3a2.5 2.5 0 0 1-2.5 2.5H15.5a2.5 2.5 0 0 1-2.5-2.5V13a2.5 2.5 0 0 1 2.5-2.5z" fill="#fff"/><path d="M28.3 10.5l5.2 5.2h-5.2z" fill="#AEBBCE"/><path d="M18.6 22.2l12.6 3.4-9.4 2.5-1.1 4.6-1.9-4-3.3.9 3.1-7.4z" fill="#193357"/></svg>EmiteGo</div>
+    <div class="brand"><img src="brand/logo_blanco.png" alt="EmiteGo" style="height:48px;width:auto"></div>
     <div class="eyebrow" style="color:var(--muted-on-navy)">Parrilla de anuncios · Meta Ads (Instagram y Facebook)</div>
     <h1>Tu ERP vende. EmiteGo factura. Un mes de anuncios, del primer clic al registro.</h1>
     <p>12 piezas (6 reels, 4 carruseles, 2 posts fijos) publicadas lunes, miércoles y viernes, más 4 sets de stories que corren toda la semana. Cada pieza trae objetivo de campaña, audiencia, guion, copys con los límites de Meta, URL con UTM y voz en off.</p>
@@ -304,7 +304,7 @@ footer{color:var(--ink-3);font-size:12.5px;padding-block:0 40px}
 <script>
 const D = JSON.parse(document.getElementById('data').textContent);
 const BASE = D.url;
-const LOGO = '<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#fff" fill-opacity=".14"/><path d="M15.5 10.5h12.8l5.2 5.2v19.3a2.5 2.5 0 0 1-2.5 2.5H15.5a2.5 2.5 0 0 1-2.5-2.5V13a2.5 2.5 0 0 1 2.5-2.5z" fill="#fff"/><path d="M18.6 22.2l12.6 3.4-9.4 2.5-1.1 4.6-1.9-4-3.3.9 3.1-7.4z" fill="#193357"/></svg>';
+const LOGO = '<img src="brand/logo_blanco.png" alt="EmiteGo" style="height:22px;width:auto;display:block">';
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const kind = f => ({'Reel':'reel','Carrusel':'carrusel','Post fijo':'fijo'}[f] || 'story');
 const tag = f => `<span class="tag ${kind(f)}"><i></i>${esc(f)}</span>`;
@@ -354,13 +354,13 @@ const copyBlock = c => `<div class="copy">
 function mockup(p) {
   if (p.formato === 'Reel') {
     const e0 = p.escenas[0];
-    return `<div class="phone"><div class="ph-top">${LOGO}EmiteGo<span class="sp">Publicidad</span></div><div class="hook">${esc(e0.texto)}</div><div><div class="cap">${esc(e0.vo)}</div><div class="ph-bot"><div class="ad-cta">${esc(p.copy.cta)}</div></div></div></div>`;
+    return `<div class="phone"><div class="ph-top">${LOGO}<span class="sp">Publicidad</span></div><div class="hook">${esc(e0.texto)}</div><div><div class="cap">${esc(e0.vo)}</div><div class="ph-bot"><div class="ad-cta">${esc(p.copy.cta)}</div></div></div></div>`;
   }
   if (p.formato === 'Carrusel') {
     return `<div class="strip" tabindex="0" aria-label="Slides del carrusel">${p.slides.map((s, i) => `<div class="post${i % 2 ? ' alt' : ''}"><span class="n">${i + 1}/${p.slides.length}</span><div class="big">${esc(s.titulo)}</div><div class="sub">${esc(s.texto)}</div></div>`).join('')}</div>`;
   }
   if (p.formato === 'Post fijo') {
-    return `<div class="post"><span class="ring" aria-hidden="true"></span><div class="ph-top" style="display:flex;gap:8px;align-items:center;font:700 13px var(--display)"><span style="width:24px;height:24px;display:block">${LOGO}</span>EmiteGo</div><div class="big">${esc(p.arte.headline)}</div><div><div class="sub">${esc(p.arte.sub)}</div><div class="badge">15 días gratis · sin tarjeta</div></div></div>`;
+    return `<div class="post"><span class="ring" aria-hidden="true"></span><div class="ph-top" style="display:flex;align-items:center">${LOGO}</div><div class="big">${esc(p.arte.headline)}</div><div><div class="sub">${esc(p.arte.sub)}</div><div class="badge">15 días gratis · sin tarjeta</div></div></div>`;
   }
 }
 
@@ -392,7 +392,7 @@ function storyHTML(s) {
   return `<article class="piece" id="${s.id}" data-k="story">
     <div class="piece-head"><span class="id">${s.id}</span>${tag('Stories')}<h3>${esc(s.titulo)}</h3><span class="when">${esc(s.fechas)} · semana ${s.semana}</span></div>
     <div class="piece-body">
-      <div class="mock-col"><div class="stories">${s.frames.map(f => `<div class="phone"><div class="ph-top" style="font-size:10px">${f === s.frames[0] ? 'EmiteGo' : ''}</div><div class="hook">${esc(f.texto)}</div></div>`).join('')}</div>${player(s.id, s.vo_dur)}</div>
+      <div class="mock-col"><div class="stories">${s.frames.map(f => `<div class="phone"><div class="ph-top" style="font-size:10px">${f === s.frames[0] ? LOGO : ''}</div><div class="hook">${esc(f.texto)}</div></div>`).join('')}</div>${player(s.id, s.vo_dur)}</div>
       <div style="min-width:0">
         <dl class="meta">
           <div><dt>Medida</dt><dd>${esc(s.medida)}</dd></div>
