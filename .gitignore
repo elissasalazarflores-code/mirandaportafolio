@@ -32,3 +32,9 @@ fisapp2/assets/shots/*_full.png
 !tts/eleven/chris_final/
 tts/eleven/chris_final/t*.wav
 
+# EmiteGo reels: se versionan las fuentes y los finales en emitego/semana1/
+out/emitego-*/
+emitego-*/audio/music.wav
+emitego-*/audio/sfx.wav
+emitego-*/audio/mix.wav
+emitego-*/assets/shots/*_full.png

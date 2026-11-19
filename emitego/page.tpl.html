@@ -188,6 +188,19 @@ footer{color:var(--ink-3);font-size:12.5px;padding-block:0 40px}
   .split .row{grid-template-columns:110px 1fr 40px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* Semana 1 lista */
+.ready{display:grid;gap:18px}
+.ready-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.asset{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;display:grid;gap:10px;align-content:start;min-width:0}
+.asset video,.asset img{width:100%;max-width:100%;border-radius:10px;display:block;background:#000}
+.asset .cap{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px;color:var(--ink-2)}
+.asset .cap b{color:var(--ink);font-family:var(--display)}
+.car{display:grid;grid-auto-flow:column;grid-auto-columns:46%;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory}
+.car img{scroll-snap-align:start}
+.files{font:12.5px var(--mono);color:var(--ink-3);overflow-wrap:anywhere}
+@media (max-width:860px){.ready-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.ready-grid{grid-template-columns:1fr}}
 </style>
 
 <header class="top">
@@ -206,6 +219,18 @@ footer{color:var(--ink-3);font-size:12.5px;padding-block:0 40px}
 </header>
 
 <main><div class="wrap">
+
+<section id="semana1">
+  <h2>Semana 1 · lista para publicar</h2>
+  <p class="lede">Las cuatro piezas de la semana 1, terminadas en las medidas de Meta. Los videos llevan voz, música, efectos y subtítulos quemados. Los copys de cada pieza están en su ficha, más abajo.</p>
+  <div class="ready-grid">
+    <div class="asset"><video src="semana1/R01_reel_tu-erp-vende.mp4" poster="semana1/R01_portada.png" controls playsinline preload="none"></video><div class="cap"><span class="tag reel"><i></i>R01</span><b>Reel · Lun 23 nov</b> 9:16 · 30 s</div></div>
+    <div class="asset"><div class="car" tabindex="0" aria-label="Slides del carrusel C02"><img src="semana1/C02_carrusel_01.png" alt="Slide 1 de 7"><img src="semana1/C02_carrusel_02.png" alt="Slide 2 de 7"><img src="semana1/C02_carrusel_03.png" alt="Slide 3 de 7"><img src="semana1/C02_carrusel_04.png" alt="Slide 4 de 7"><img src="semana1/C02_carrusel_05.png" alt="Slide 5 de 7"><img src="semana1/C02_carrusel_06.png" alt="Slide 6 de 7"><img src="semana1/C02_carrusel_07.png" alt="Slide 7 de 7"></div><div class="cap"><span class="tag carrusel"><i></i>C02</span><b>Carrusel · Mié 25 nov</b> 4:5 · 7 slides · desliza</div></div>
+    <div class="asset"><img src="semana1/P03_post_60s.png" alt="Post fijo 60 segundos"><div class="cap"><span class="tag fijo"><i></i>P03</span><b>Post fijo · Vie 27 nov</b> 4:5</div></div>
+    <div class="asset"><video src="semana1/S1_stories_cuanto-tardas.mp4" poster="semana1/S1_portada.png" controls playsinline preload="none"></video><div class="cap"><span class="tag story"><i></i>S1</span><b>Stories · 23–29 nov</b> 9:16 · 10 s</div></div>
+  </div>
+  <p class="files">Archivos en el repositorio: emitego/semana1/ (R01_reel_tu-erp-vende.mp4, C02_carrusel_01…07.png, P03_post_60s.png, S1_stories_cuanto-tardas.mp4)</p>
+</section>
 
 <section id="estrategia">
   <h2>La ruta del mes</h2>
